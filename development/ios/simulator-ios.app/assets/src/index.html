@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head><script src='../forge/app_config.js'></script><script src='../forge/all.js'></script>
+		<meta charset="utf-8">
+    <script src="https://trigger.io/catalyst/target/target-script-min.js#70082CBC-A245-4494-9AEC-64736D5952CA"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+		<script src="js/main.js"></script>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/foundation.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+	</head>
+	<body>
+    <div id="main-container">
+      <div class="row header-row" style="z-index:0;">
+        <div class="small-12 small-centered columns">
+          <h2 style="visibility:hidden;">holiday</h2>
+        </div>
+      </div>
+      <div id="pager">
+
+      </div>
+      <div id="footer">
+        <span>&lt;</span>
+        <span class="today_btn">swipe</span>
+        <span>&gt;</span>
+      </div>
+    </div>
+
+      <script type="text/html" id="page_template">
+        <div class="page">
+          <div class="row header-row">
+            <div class="small-12 small-centered columns">
+              <h2>${date}</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 small-centered columns">
+              <h3>Holidays on this date...</h3>
+              <ul class="day-holiday-list no-bullet">
+                <li>Loading...</li>
+              </ul>
+            </div>
+        </div>
+        </div>
+      </script>
+
+      <script type="text/html" id="holiday_template">
+        <li><a href="${url}">${name}</a></li>
+      </script>
+	</body>
+</html>
