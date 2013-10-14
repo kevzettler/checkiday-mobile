@@ -25,7 +25,7 @@ function formatDate(date){
       ret = {}
       ;
 
-  ret.nice = checkiday.months[mm]+ " " + dd + ", " + yyyy;
+  ret.nice = checkiday.months[mm-1]+ " " + dd + ", " + yyyy;
   
   if(dd<10){
     dd='0'+dd
