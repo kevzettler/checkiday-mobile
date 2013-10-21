@@ -25,7 +25,7 @@ function formatDate(date){
       ret = {}
       ;
 
-  ret.nice = checkiday.months[mm]+ " " + dd + ", " + yyyy;
+  ret.nice = checkiday.months[mm-1]+ " " + dd + ", " + yyyy;
   
   if(dd<10){
     dd='0'+dd
@@ -180,21 +180,23 @@ function renderPage(date){
 }
 
 $(function(){
-  renderPage(checkiday.date);
-  $(document).on('swipeRight',function(e){
+
+  $(document).on('swipeRight', '.page',function(e){
     checkiday.date = AddDays(checkiday.date, -1);
     transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.right);
   });
 
-  $(document).on('swipeLeft', function(e){
+  $(document).on('swipeLeft', '.page', function(e){
     checkiday.date = AddDays(checkiday.date, 1);
     transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.left);
   });
 
-  $(document).on('click', '.today_btn', function(e){
-    console.log("today btn hit");
-    checkiday.date = new Date();
-    renderPage(checkiday.date);
-  });
+  renderPage(checkiday.date);
+
+  // $(document).on('click', '.today_btn', function(e){
+  //   console.log("today btn hit");
+  //   checkiday.date = new Date();
+  //   renderPage(checkiday.date);
+  // });
 
 });

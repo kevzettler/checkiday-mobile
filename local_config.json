@@ -2,10 +2,15 @@
 	"general": {},
 	"ios": {
 		"profiles": {
-			"DEFAULT": {}
+			"DEFAULT": {
+				"provisioning_profile": "/Users/kevzettler/Desktop/trigger_dev.mobileprovision",
+				"developer_certificate": "Kev Zettler",
+				"developer_certificate_path": "/Users/kevzettler/Desktop/ios_development.cer"
+			}
 		},
-		"simulatorsdk": "6.1",
-		"simulatorfamily": "iphone"
+		"simulatorsdk": "7.0",
+		"simulatorfamily": "iphone",
+		"device": "device"
 	},
 	"android": {
 		"profiles": {

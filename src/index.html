@@ -2,10 +2,6 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-    <script src="https://trigger.io/catalyst/target/target-script-min.js#70082CBC-A245-4494-9AEC-64736D5952CA"></script>
-    <script src="js/zepto.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-		<script src="js/main.js"></script>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/foundation.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -27,26 +23,33 @@
       </div>
     </div>
 
-      <script type="text/html" id="page_template">
-        <div class="page">
-          <div class="row header-row">
-            <div class="small-12 small-centered columns">
-              <h2>${date}</h2>
-            </div>
+    <script type="text/html" id="page_template">
+      <div class="page">
+        <div class="row header-row">
+          <div class="small-12 small-centered columns">
+            <h2>${date}</h2>
           </div>
-          <div class="row">
-            <div class="small-12 small-centered columns">
-              <h3>Holidays on this date...</h3>
-              <ul class="day-holiday-list no-bullet">
-                <li>Loading...</li>
-              </ul>
-            </div>
         </div>
-        </div>
-      </script>
+        <div class="row">
+          <div class="small-12 small-centered columns">
+            <h3>Holidays on this date...</h3>
+            <ul class="day-holiday-list no-bullet">
+              <li>Loading...</li>
+            </ul>
+          </div>
+      </div>
+      </div>
+    </script>
 
-      <script type="text/html" id="holiday_template">
-        <li><a href="${url}">${name}</a></li>
-      </script>
+    <script type="text/html" id="holiday_template">
+      <li><span data-href="${url}">${name}</span></li>
+    </script>
+
+    <script src="https://trigger.io/catalyst/target/target-script-min.js#70082CBC-A245-4494-9AEC-64736D5952CA"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/hard_cache.js"></script>
+    <script src="js/main.js"></script>
 	</body>
 </html>
