@@ -14,11 +14,15 @@ html,body{
   left:0px;
 }
 
+.header-row{
+  width:100%;
+  
+}
+
 .page{
-  height:100%;
   width:100%;
   -webkit-backface-visibility:hidden;
-  margin-top:3.5em;
+  margin-top:4em;
 }
 
 #footer{
@@ -49,8 +53,34 @@ html,body{
 }
 
 .day-holiday-list a{
-    display: block;
-    height: 4em;
-    line-height: 4em;
+  padding:20px 0 20px 10px;
+}
+
+.button{
+  width:100%;
+  text-align: left;
+
+}
+
+.holiday_actions{
+  list-style-type: none;
+  display: none;
+}
+
+.icon{
+  font-size:50px;
+  line-height: 50px;
+}
+
+h1, h2{
+  padding-left:10px;
+}
+
+h1{
+  font-size:25px;
+}
+
+h2{
+  font-size:18px;
 }
 

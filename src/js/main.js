@@ -173,7 +173,12 @@ function requestGetErrorHandler(error){
 
 function getHolidays(date){
   var state = {date: formatDate(date).ugly};
-  forge.prefs.get(date, $.proxy(prefsGetHandler, state), prefsErrorHandler);
+  if(typeof hard_cache[state.date] != 'undefined'){
+    console.log("pulling from hard cache");
+    renderHolidays(hard_cache[state.date].holidays);
+  }else{
+    forge.prefs.get(date, $.proxy(prefsGetHandler, state), prefsErrorHandler);
+  }
 }
 
 function renderPage(date){
@@ -181,24 +186,57 @@ function renderPage(date){
   getHolidays(date);
 }
 
-$(function(){
 
-  $(document).on('swipeRight', '.page',function(e){
-    checkiday.date = AddDays(checkiday.date, -1);
-    transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.right);
+  var $doc = $(document),
+      Modernizr = window.Modernizr;
+
+  $(document).ready(function() {
+    $.fn.foundationAlerts           ? $doc.foundationAlerts() : null;
+    $.fn.foundationButtons          ? $doc.foundationButtons() : null;
+    $.fn.foundationAccordion        ? $doc.foundationAccordion() : null;
+    $.fn.foundationNavigation       ? $doc.foundationNavigation() : null;
+    $.fn.foundationTopBar           ? $doc.foundationTopBar() : null;
+    $.fn.foundationCustomForms      ? $doc.foundationCustomForms() : null;
+    $.fn.foundationMediaQueryViewer ? $doc.foundationMediaQueryViewer() : null;
+    $.fn.foundationTabs             ? $doc.foundationTabs({callback : $.foundation.customForms.appendCustomMarkup}) : null;
+    $.fn.foundationTooltips         ? $doc.foundationTooltips() : null;
+    $.fn.foundationMagellan         ? $doc.foundationMagellan() : null;
+    $.fn.foundationClearing         ? $doc.foundationClearing() : null;
+    $.fn.placeholder                ? $('input, textarea').placeholder() : null;
+
+    $(document).on('swipeRight',function(e){
+      checkiday.date = AddDays(checkiday.date, -1);
+      transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.right);
+    });
+
+    $(document).on('swipeLeft',function(e){
+      checkiday.date = AddDays(checkiday.date, 1);
+      transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.left);
+    });
+
+    $(document).on('click', ".holiday_button", function(e){
+      var $this = $(this);
+      console.log("whats this", $this);
+
+      $('.holiday_actions:visible').slideUp('fast', function(){
+        if($this.next('.holiday_actions').is(":visible") === 'none'){
+          $this.next('.holiday_actions').slideDown('fast');
+        }else{
+          $this.next('.holiday_actions').slideUp('fast');
+        }
+      });
+    });
+
+    renderPage(checkiday.date);
   });
 
-  $(document).on('swipeLeft', '.page', function(e){
-    checkiday.date = AddDays(checkiday.date, 1);
-    transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.left);
-  });
+  // Hide address bar on mobile devices (except if #hash present, so we don't mess up deep linking).
+  if (Modernizr.touch && !window.location.hash) {
+    $(window).load(function () {
+      setTimeout(function () {
+        window.scrollTo(0, 1);
+      }, 0);
+    });
+  }
 
-  renderPage(checkiday.date);
 
-  // $(document).on('click', '.today_btn', function(e){
-  //   console.log("today btn hit");
-  //   checkiday.date = new Date();
-  //   renderPage(checkiday.date);
-  // });
-
-});

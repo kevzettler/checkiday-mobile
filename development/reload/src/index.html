@@ -12,14 +12,11 @@
 				}
 			</script><script src='../forge/app_config.js'></script><script src='../forge/all.js'></script>
 		<meta charset="utf-8">
-    <script src="https://trigger.io/catalyst/target/target-script-min.js#70082CBC-A245-4494-9AEC-64736D5952CA"></script>
-    <script src="js/zepto.min.js"></script>
-    <script src="js/touch.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/main.js"></script>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/foundation.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/foundation-icons.css" rel="stylesheet">
+    <script src="js/modernizr.foundation.js"></script>
 	</head>
 	<body>
     <div id="main-container">
@@ -38,26 +35,48 @@
       </div>
     </div>
 
-      <script type="text/html" id="page_template">
-        <div class="page">
-          <div class="row header-row">
-            <div class="small-12 small-centered columns">
-              <h2>${date}</h2>
-            </div>
+    <script type="text/html" id="page_template">
+      <div class="page">
+        <div class="row header-row">
+          <div>
+            <h1>${date}</h1>
           </div>
-          <div class="row">
-            <div class="small-12 small-centered columns">
-              <h3>Holidays on this date...</h3>
-              <ul class="day-holiday-list no-bullet">
-                <li>Loading...</li>
-              </ul>
-            </div>
         </div>
-        </div>
-      </script>
+        <div class="row">
+          <div>
+            <h2>Holidays on this date...</h2>
+            <ul class="day-holiday-list no-bullet">
+              <li>Loading...</li>
+            </ul>
+          </div>
+      </div>
+      </div>
+    </script>
 
-      <script type="text/html" id="holiday_template">
-        <li><span data-href="${url}">${name}</span></li>
-      </script>
+    <script type="text/html" id="holiday_template">
+      <li>
+        <a href="javascript:void()" class="secondary button holiday_button" data-href="${url}">${name}</a>
+        <ul class="holiday_actions inline-list">
+          <li>
+            <a href="${url}" class="secondary button"><i class="icon fi-results"></i></a>
+          </li>
+          <li>
+            <a href="${url}" class="secondary button"><i class="icon fi-social-facebook"></i></a>
+          </li>
+          <li>
+            <a href="${url}" class="secondary button"><i class="icon fi-social-twitter"></i></a>
+          </li>
+        </ul>
+      </li>
+    </script>
+
+    <script src="https://trigger.io/catalyst/target/target-script-min.js#70082CBC-A245-4494-9AEC-64736D5952CA"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/zepto.selector.js"></script>
+    <script src="js/zepto-slide-transition.min.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/hardcache.js"></script>
+    <script src="js/main.js"></script>
 	</body>
 </html>
