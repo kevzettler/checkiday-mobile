@@ -9,6 +9,7 @@ html,body{
 
 #pager{
   height:100%;
+  width:100%;
   position:absolute;
   top:0px;
   left:0px;
@@ -16,7 +17,7 @@ html,body{
 
 .header-row{
   width:100%;
-  
+
 }
 
 .page{
@@ -65,6 +66,16 @@ html,body{
 .holiday_actions{
   list-style-type: none;
   display: none;
+  background: #222;
+  width: 100%;
+}
+
+.holiday_actions li{
+  margin-right: 10px !important;
+}
+
+.holiday_actions a{
+  color: #FFF;
 }
 
 .icon{
@@ -82,5 +93,10 @@ h1{
 
 h2{
   font-size:18px;
+}
+
+ul, li{
+  margin:0 !important;
+  padding:0 !important;
 }
 

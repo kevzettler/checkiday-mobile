@@ -216,15 +216,7 @@ function renderPage(date){
 
     $(document).on('click', ".holiday_button", function(e){
       var $this = $(this);
-      console.log("whats this", $this);
-
-      $('.holiday_actions:visible').slideUp('fast', function(){
-        if($this.next('.holiday_actions').is(":visible") === 'none'){
-          $this.next('.holiday_actions').slideDown('fast');
-        }else{
-          $this.next('.holiday_actions').slideUp('fast');
-        }
-      });
+      $this.next('.holiday_actions').slideToggle();
     });
 
     renderPage(checkiday.date);
