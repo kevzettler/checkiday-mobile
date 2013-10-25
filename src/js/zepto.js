@@ -1,6 +1,4 @@
 /* Zepto v1.0-1-ga3cab6c - polyfill zepto detect event ajax form fx - zeptojs.com/license */
-
-
 ;(function(undefined){
   if (String.prototype.trim === undefined) // fix for iOS 3.2
     String.prototype.trim = function(){ return this.replace(/^\s+|\s+$/g, '') }
@@ -1259,7 +1257,7 @@ window.Zepto = Zepto
     // Whether data should be serialized to string
     processData: true,
     // Whether the browser should be allowed to cache GET responses
-    cache: true,
+    cache: true
   }
 
   function mimeToDataType(mime) {

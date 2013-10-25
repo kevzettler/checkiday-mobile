@@ -106,7 +106,7 @@ function transition(wrapperEl, currentPageEl, nextPageEl, delta) {
   // insert into wrapper for transition
   $wrapper.append($next);
 
-  $wrapper.animate(
+  $wrapper.anim(
     {translate: (-delta * transitionDistance)+'px,0'},
 
     // the animation will take 0.3 seconds
@@ -204,19 +204,23 @@ function renderPage(date){
     $.fn.foundationClearing         ? $doc.foundationClearing() : null;
     $.fn.placeholder                ? $('input, textarea').placeholder() : null;
 
-    $(document).on('swipeRight',function(e){
+    $('#pager').on('swipeRight',function(e){
+      console.log("swipe Right");
       checkiday.date = AddDays(checkiday.date, -1);
+      console.log("bout to transition");
       transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.right);
     });
 
-    $(document).on('swipeLeft',function(e){
+    $('#pager').on('swipeLeft',function(e){
+      console.log("swipe left");
       checkiday.date = AddDays(checkiday.date, 1);
+      console.log("bout to transition");
       transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.left);
     });
 
     $(document).on('click', ".holiday_button", function(e){
       var $this = $(this);
-      $this.next('.holiday_actions').slideToggle();
+      $this.next('.holiday_actions').slideToggle('slow');
     });
 
     renderPage(checkiday.date);

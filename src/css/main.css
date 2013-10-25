@@ -53,7 +53,7 @@ html,body{
   background: linear-gradient(to bottom, #ff9595 0%,#ff3030 100%); /* W3C */
 }
 
-.day-holiday-list a{
+.day-holiday-list .button{
   padding:20px 0 20px 10px;
 }
 
@@ -70,6 +70,10 @@ html,body{
   width: 100%;
 }
 
+.holiday_actions a{
+  margin-left:10px;
+}
+
 .holiday_actions li{
   margin-right: 10px !important;
 }
@@ -79,8 +83,7 @@ html,body{
 }
 
 .icon{
-  font-size:50px;
-  line-height: 50px;
+  font-size:40px;
 }
 
 h1, h2{
