@@ -108,6 +108,10 @@ a.pull-left{
   float:left;
 }
 
+a.prev{
+  float:left;
+}
+
 a.next{
   float:right;
   margin-right:10px;
