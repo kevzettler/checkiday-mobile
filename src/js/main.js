@@ -6,8 +6,6 @@ if(typeof forge != 'undefined'){
   };
 }
 
-
-
 //zepto templates
 $.fn.tmpl = function(d) {
     var s = $(this[0]).html().trim();
@@ -43,29 +41,29 @@ function formatDate(date){
 
 var checkiday = {
   months: [
-  "January"
-  ,"February"
-  ,"March"
-  ,"April"
-  ,"May"
-  ,"June"
-  ,"July"
-  ,"August"
-  ,"September"
-  ,"October"
-  ,"November"
-  ,"December"
-  ]
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+  ],
 
-  ,directions: {
-    left:1
-    ,right: -1
-  }
+  directions: {
+    left:1,
+    right: -1
+  },
 
-  ,transitionInProgress: false
+  transitionInProgress: false,
 
-  ,date : new Date()
-}
+  date : new Date()
+};
 
 function AddDays(date, amount){
   var tzOff = date.getTimezoneOffset() * 60 * 1000;
@@ -82,36 +80,6 @@ function AddDays(date, amount){
   }
   return d;
 }
-
-// function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
-//   //get elements
-//   fromPage = document.getElementById(fromPage);
-//   toPage = document.getElementById(toPage);
-
-//   //trigger onStart 
-//   if(typeof onStart == 'function') {onStart();}
-
-//   //trigger animation
-//   if (!reverse) {
-//     fromPage.className = "flip out active"; 
-//     toPage.className = "flip in active";
-//   } else {
-//     fromPage.className = "flip out reverse active"; 
-//     toPage.className = "flip in reverse active";
-//   }
-
-//    fromPage.addEventListener('webkitAnimationEnd', function(){
-//       fromPage.className = ""; 
-//    });
-   
-//    toPage.addEventListener('webkitAnimationEnd', function(){
-//     toPage.className="active";
-//       //trigger onEnd
-//       if(typeof onEnd == 'function') {
-//         onEnd();
-//       }
-//     });
-// }
 
 function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
   //get elements
@@ -161,7 +129,8 @@ function slideTranistion(wrapperEl, currentPageEl, nextPageEl, delta) {
   $next.css({
     position: 'absolute',
     top: 0,
-    left: (delta*transitionDistance)+'px'
+    left: (delta*transitionDistance)+'px',
+    "z-index": "-2"
   });
 
   // insert into wrapper for transition
@@ -185,7 +154,7 @@ function slideTranistion(wrapperEl, currentPageEl, nextPageEl, delta) {
       $wrapper.attr('style', '');
 
       // remove the position absoluteness
-      $next.css({top: '', left: '', position: ''});
+      $next.css({top: '', left: '', position: '', 'z-index': 2});
 
       checkiday.transitionInProgress = false;
     }
@@ -235,7 +204,6 @@ function requestGetErrorHandler(error){
 function getHolidays(date){
   var state = {date: formatDate(date).ugly};
   if(typeof hard_cache[state.date] != 'undefined'){
-    console.log("pulling from hard cache");
     renderHolidays(hard_cache[state.date].holidays);
   }else{
     forge.prefs.get(date, $.proxy(prefsGetHandler, state), prefsErrorHandler);
@@ -251,11 +219,11 @@ function renderCalendar(){
   var $calendar = $( '#calendar' ),
   cal = $calendar.calendario( {
     onDayClick : function( $el, $contentEl, dateProperties ) {
-
-      if( $contentEl.length > 0 ) {
-        showEvents( $contentEl, dateProperties );
-      }
-
+      var date = new Date(Date.parse(dateProperties.monthname + " " + dateProperties.day + ", " + dateProperties.year));
+      $('.page').remove();
+      checkiday.date = date;
+      renderPage(date);
+      flipTransition('#cal-view', '#list-view');
     },
     displayWeekAbbr : true
   } ).data('calendario'),
@@ -296,16 +264,12 @@ function renderCalendar(){
     $.fn.placeholder                ? $('input, textarea').placeholder() : null;
 
     $('#pager').on('swipeRight',function(e){
-      console.log("swipe Right");
       checkiday.date = AddDays(checkiday.date, -1);
-      console.log("bout to transition");
       slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.right);
     });
 
     $('#pager').on('swipeLeft',function(e){
-      console.log("swipe left");
       checkiday.date = AddDays(checkiday.date, 1);
-      console.log("bout to transition");
       slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.left);
     });
 

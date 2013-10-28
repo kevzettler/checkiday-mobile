@@ -40,7 +40,6 @@ body{
 .page{
   width:100%;
   -webkit-backface-visibility:hidden;
-  margin-top:4em;
 }
 
 #footer{
