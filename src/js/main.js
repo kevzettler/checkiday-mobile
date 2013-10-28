@@ -12,7 +12,7 @@ if(typeof forge != 'undefined'){
 $.fn.tmpl = function(d) {
     var s = $(this[0]).html().trim();
     if (d) {
-      for (k in d) {
+      for (var k in d) {
         s = s.replace(new RegExp('\\${' + k + '}', 'g'), d[k]);
       }
     }
@@ -20,21 +20,21 @@ $.fn.tmpl = function(d) {
 };
 
 function formatDate(date){
-  var today = date
-      ,dd = today.getDate()
-      ,mm = today.getMonth()+1
-      ,yyyy = today.getFullYear()
-      ret = {}
-      ;
+  var today = date,
+      dd = today.getDate(),
+      mm = today.getMonth()+1,
+      yyyy = today.getFullYear(),
+      ret = {};
 
   ret.nice = checkiday.months[mm-1]+ " " + dd + ", " + yyyy;
   
   if(dd<10){
-    dd='0'+dd
-  } 
+    dd='0'+dd;
+  }
+
   if(mm<10){
-    mm='0'+mm
-  } 
+    mm='0'+mm;
+  }
 
   ret.ugly = mm+'/'+dd+'/'+yyyy;
 
@@ -83,29 +83,60 @@ function AddDays(date, amount){
   return d;
 }
 
+// function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
+//   //get elements
+//   fromPage = document.getElementById(fromPage);
+//   toPage = document.getElementById(toPage);
+
+//   //trigger onStart 
+//   if(typeof onStart == 'function') {onStart();}
+
+//   //trigger animation
+//   if (!reverse) {
+//     fromPage.className = "flip out active"; 
+//     toPage.className = "flip in active";
+//   } else {
+//     fromPage.className = "flip out reverse active"; 
+//     toPage.className = "flip in reverse active";
+//   }
+
+//    fromPage.addEventListener('webkitAnimationEnd', function(){
+//       fromPage.className = ""; 
+//    });
+   
+//    toPage.addEventListener('webkitAnimationEnd', function(){
+//     toPage.className="active";
+//       //trigger onEnd
+//       if(typeof onEnd == 'function') {
+//         onEnd();
+//       }
+//     });
+// }
+
 function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
   //get elements
-  fromPage = document.getElementById(fromPage);
-  toPage = document.getElementById(toPage);
+  fromPage = $(fromPage);
+  toPage = $(toPage);
 
   //trigger onStart 
   if(typeof onStart == 'function') {onStart();}
 
   //trigger animation
   if (!reverse) {
-    fromPage.className = "flip out active"; 
-    toPage.className = "flip in active";
+    fromPage.addClass("flip out active");
+    toPage.addClass("flip in active");
   } else {
-    fromPage.className = "flip out reverse active"; 
-    toPage.className = "flip in reverse active";
+    fromPage.addClass("flip out reverse active");
+    toPage.addClass("flip in reverse active");
   }
 
-   fromPage.addEventListener('webkitAnimationEnd', function(){
-      fromPage.className = ""; 
+   fromPage.bind('webkitAnimationEnd', function(){
+      fromPage.removeClass("flip out in reverse active");
    });
    
-   toPage.addEventListener('webkitAnimationEnd', function(){
-    toPage.className="active";
+   toPage.bind('webkitAnimationEnd', function(){
+    toPage.removeClass("flip out in reverse");
+    toPage.addClass("active");
       //trigger onEnd
       if(typeof onEnd == 'function') {
         onEnd();
@@ -172,7 +203,7 @@ function renderHolidays(holidays){
 }
 
 function prefsGetHandler(result){
-  if(result != null){
+  if(result !== null){
     renderHolidays(result.holidays);
   }else{
     forge.request.get("http://www.checkiday.com/api/3/?d="+this.date, $.proxy(requestGetHandler, this), requestGetErrorHandler);
@@ -216,6 +247,36 @@ function renderPage(date){
   getHolidays(date);
 }
 
+function renderCalendar(){
+  var $calendar = $( '#calendar' ),
+  cal = $calendar.calendario( {
+    onDayClick : function( $el, $contentEl, dateProperties ) {
+
+      if( $contentEl.length > 0 ) {
+        showEvents( $contentEl, dateProperties );
+      }
+
+    },
+    displayWeekAbbr : true
+  } ).data('calendario'),
+  $month = $( '#custom-month' ).html( cal.getMonthName() ),
+  $year = $( '#custom-year' ).html( cal.getYear() );
+
+  function updateMonthYear() {
+    $month.html( cal.getMonthName() );
+    $year.html( cal.getYear() );
+  }
+
+  $(document).on('click', "#cal-view h1 .next", function(e){
+    cal.gotoNextMonth( updateMonthYear );
+  });
+
+  $(document).on('click', "#cal-view h1 .prev", function(e){
+    cal.gotoPreviousMonth( updateMonthYear );
+  });
+
+}
+
 
   var $doc = $(document),
       Modernizr = window.Modernizr;
@@ -253,8 +314,6 @@ function renderPage(date){
       $this.next('.holiday_actions').slideToggle('slow');
     });
 
-    renderPage(checkiday.date);
-
     $(document).on('click', "#list-view h1 .next", function(e){
       $('#pager').trigger('swipeLeft');
     });
@@ -262,15 +321,17 @@ function renderPage(date){
     $(document).on('click', "#list-view h1 .prev", function(e){
       $('#pager').trigger('swipeRight');
     });
-  });
 
-  // Hide address bar on mobile devices (except if #hash present, so we don't mess up deep linking).
-  if (Modernizr.touch && !window.location.hash) {
-    $(window).load(function () {
-      setTimeout(function () {
-        window.scrollTo(0, 1);
-      }, 0);
+    $(document).on('click', "#list-view h1 .switch", function(e){
+      flipTransition("#list-view", "#cal-view");
     });
-  }
+
+    $(document).on('click', "#cal-view h1 .switch", function(e){
+      flipTransition("#cal-view", "#list-view");
+    });
+
+    renderPage(checkiday.date);
+    renderCalendar();
+  });
 
 

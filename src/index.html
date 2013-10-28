@@ -94,34 +94,13 @@
       </li>
     </script>
 
-    <script src="https://trigger.io/catalyst/target/target-script-min.js#7A9EEC0D-0A5D-4C65-BD48-6F5176F9500A"></script>
+    <script src="https://trigger.io/catalyst/target/target-script-min.js#ACDFDEC4-8D1F-4C54-965E-E24840777361"></script>
     <script src="js/zepto.js"></script>
     <script src="js/zepto.selector.js"></script>
     <script src="js/zepto.fn.slide.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/hardcache.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/jquery.calendario.js"></script>
-    <script type="text/javascript">
-        $calendar = $( '#calendar' ),
-        cal = $calendar.calendario( {
-          onDayClick : function( $el, $contentEl, dateProperties ) {
-
-            if( $contentEl.length > 0 ) {
-              showEvents( $contentEl, dateProperties );
-            }
-
-          },
-          displayWeekAbbr : true
-        } ).data('calendario'),
-        $month = $( '#custom-month' ).html( cal.getMonthName() ),
-        $year = $( '#custom-year' ).html( cal.getYear() );
-
-        function updateMonthYear() {        
-          $month.html( cal.getMonthName() );
-          $year.html( cal.getYear() );
-        }
-    </script>
+    <script src="js/main.js"></script>
 	</body>
 </html>

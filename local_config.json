@@ -10,7 +10,7 @@
 		},
 		"simulatorsdk": "7.0",
 		"simulatorfamily": "iphone",
-		"device": "device"
+		"device": "simulator"
 	},
 	"android": {
 		"profiles": {

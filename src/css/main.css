@@ -104,7 +104,17 @@ h1, h2{
   padding-left:10px;
 }
 
+a.pull-left{
+  float:left;
+}
+
+a.next{
+  float:right;
+  margin-right:10px;
+}
+
 h1{
+  text-align: center;
   font-size:25px;
 }
 

@@ -1,5 +1,3 @@
-@import url('demo.css');
-
 @font-face {
   font-family: 'fontawesome-selected';
   src: url("font/fontawesome-selected.eot");
@@ -22,7 +20,7 @@
 .fc-calendar .fc-head {
 	height: 30px;
 	line-height: 30px;
-	background: #ccc;
+	background: #222;
 	color: #fff;
 }
 
@@ -33,12 +31,12 @@
 	height: -moz-calc(100% - 30px);
 	height: -webkit-calc(100% - 30px);
 	height: calc(100% - 30px);
-	border: 1px solid #ddd;
+	border: 1px solid #222;
 }
 
 .fc-calendar .fc-row {
 	width: 100%;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #222;
 }
 
 .fc-four-rows .fc-row  {
@@ -74,7 +72,7 @@
 }
 
 .fc-calendar .fc-row > div {
-	border-right: 1px solid #ddd;
+	border-right: 1px solid #222;
 	padding: 4px;
 	overflow: hidden;
 	position: relative;
@@ -91,7 +89,7 @@
 	font-size: 20px;
 	line-height: 20px;
 	font-weight: 700;
-	color: #ddd;
+	color: #222;
 	text-shadow: 0 -1px 0 rgba(255,255,255,0.8);
 	bottom: 5px;
 	right: 5px;
