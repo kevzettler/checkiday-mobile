@@ -4,37 +4,71 @@
 		<meta charset="utf-8">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/foundation.min.css" rel="stylesheet">
-    <link href="css/foundation-icons.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/calendar.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
     <script src="js/modernizr.foundation.js"></script>
 	</head>
 	<body>
     <div id="main-container">
-      <div class="row header-row" style="z-index:0;">
-        <div class="small-12 small-centered columns">
-          <h2 style="visibility:hidden;">holiday</h2>
+
+      <div id="list-view" class="app-page active">
+        <div class="row header-row" style="z-index:0;">
+          <div class="small-12 small-centered columns">
+            <h2 style="visibility:hidden;">holiday</h2>
+          </div>
+        </div>
+        <div id="pager">
+
+        </div>
+      </div><!-- front -->
+
+      <div id="cal-view" class="app-page custom-inner">
+        <div class="row header-row custom-header" style="z-index:0;">
+          <div class="small-12 small-centered columns">
+            <h1>
+              <a href="javascript:void(0);" class="prev">
+                <i class="fa fa-caret-left"></i>
+              </a>
+              <span id="custom-month">Month</span>
+              <span id="custom-year">Year</span>
+              <a href="javascript:void(0);" class="switch">
+                <i class="fa fa-list-ul"></i>
+              </a>
+              <a href="javascript:void(0);" class="next">
+                <i class="fa fa-caret-right"></i>
+              </a>
+            </h1>
+          </div>
+        </div>
+        <div id="calendar-holder">
+          <div id="calendar" class="fc-calendar-container"></div>
         </div>
       </div>
-      <div id="pager">
 
-      </div>
-      <div id="footer">
-        <span>&lt;</span>
-        <span class="today_btn">swipe</span>
-        <span>&gt;</span>
-      </div>
-    </div>
+    </div><!-- main-container -->
 
     <script type="text/html" id="page_template">
       <div class="page">
         <div class="row header-row">
           <div>
-            <h1>${date}</h1>
+            <h1>
+              <a href="javascript:void(0);" class="prev">
+                <i class="fa fa-caret-left"></i>
+              </a>
+              <span>${date}</span>
+              <a href="javascript:void(0);" class="switch">
+                <i class="fa fa-calendar"></i>
+              </a>
+              <a href="javascript:void(0);" class="next">
+                <i class="fa fa-caret-right"></i>
+              </a>
+            </h1>
           </div>
         </div>
         <div class="row" style="width:100%;">
           <div>
-            <h2>Holidays on this date...</h2>
+            <h2>Holidays on this date:</h2>
             <ul class="day-holiday-list no-bullet">
               <li>Loading...</li>
             </ul>
@@ -48,13 +82,13 @@
         <a href="javascript:void()" class="secondary button holiday_button" data-href="${url}">${name}</a>
         <ul class="holiday_actions inline-list">
           <li>
-            <a href="${url}"><i class="icon fi-results"></i></a>
+            <a href="${url}"><i class="fa fa-external-link"></i></a>
           </li>
           <li>
-            <a href="${url}"><i class="icon fi-social-facebook"></i></a>
+            <a href="${url}"><i class="fa fa-facebook-square"></i></a>
           </li>
           <li>
-            <a href="${url}"><i class="icon fi-social-twitter"></i></a>
+            <a href="${url}"><i class="fa fa-twitter"></i></a>
           </li>
         </ul>
       </li>
@@ -63,10 +97,31 @@
     <script src="https://trigger.io/catalyst/target/target-script-min.js#7A9EEC0D-0A5D-4C65-BD48-6F5176F9500A"></script>
     <script src="js/zepto.js"></script>
     <script src="js/zepto.selector.js"></script>
-    <script src="js/zepto-slide-transition.min.js"></script>
-
+    <script src="js/zepto.fn.slide.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/hardcache.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.calendario.js"></script>
+    <script type="text/javascript">
+        $calendar = $( '#calendar' ),
+        cal = $calendar.calendario( {
+          onDayClick : function( $el, $contentEl, dateProperties ) {
+
+            if( $contentEl.length > 0 ) {
+              showEvents( $contentEl, dateProperties );
+            }
+
+          },
+          displayWeekAbbr : true
+        } ).data('calendario'),
+        $month = $( '#custom-month' ).html( cal.getMonthName() ),
+        $year = $( '#custom-year' ).html( cal.getYear() );
+
+        function updateMonthYear() {        
+          $month.html( cal.getMonthName() );
+          $year.html( cal.getYear() );
+        }
+    </script>
 	</body>
 </html>

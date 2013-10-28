@@ -83,8 +83,38 @@ function AddDays(date, amount){
   return d;
 }
 
+function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
+  //get elements
+  fromPage = document.getElementById(fromPage);
+  toPage = document.getElementById(toPage);
 
-function transition(wrapperEl, currentPageEl, nextPageEl, delta) {
+  //trigger onStart 
+  if(typeof onStart == 'function') {onStart();}
+
+  //trigger animation
+  if (!reverse) {
+    fromPage.className = "flip out active"; 
+    toPage.className = "flip in active";
+  } else {
+    fromPage.className = "flip out reverse active"; 
+    toPage.className = "flip in reverse active";
+  }
+
+   fromPage.addEventListener('webkitAnimationEnd', function(){
+      fromPage.className = ""; 
+   });
+   
+   toPage.addEventListener('webkitAnimationEnd', function(){
+    toPage.className="active";
+      //trigger onEnd
+      if(typeof onEnd == 'function') {
+        onEnd();
+      }
+    });
+}
+
+
+function slideTranistion(wrapperEl, currentPageEl, nextPageEl, delta) {
   if (checkiday.transitionInProgress) {
     return;
   }
@@ -208,14 +238,14 @@ function renderPage(date){
       console.log("swipe Right");
       checkiday.date = AddDays(checkiday.date, -1);
       console.log("bout to transition");
-      transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.right);
+      slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.right);
     });
 
     $('#pager').on('swipeLeft',function(e){
       console.log("swipe left");
       checkiday.date = AddDays(checkiday.date, 1);
       console.log("bout to transition");
-      transition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.left);
+      slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.left);
     });
 
     $(document).on('click', ".holiday_button", function(e){
@@ -224,6 +254,14 @@ function renderPage(date){
     });
 
     renderPage(checkiday.date);
+
+    $(document).on('click', "#list-view h1 .next", function(e){
+      $('#pager').trigger('swipeLeft');
+    });
+
+    $(document).on('click', "#list-view h1 .prev", function(e){
+      $('#pager').trigger('swipeRight');
+    });
   });
 
   // Hide address bar on mobile devices (except if #hash present, so we don't mess up deep linking).
