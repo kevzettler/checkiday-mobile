@@ -2,6 +2,14 @@
  * Zepto plugin : slide transition v1.2
  * https://github.com/Ilycite/zepto-slide-transition/
  */
+
+
+/*
+*
+* I made some edits to this because it wasn't actually sliding down. KJZ
+*
+*/
+
 (function($) {
 
 	/**
@@ -32,13 +40,14 @@
 			var position = $self.css('position');
 
 			// show element if it is hidden
-			$self.show();
+			//$self.show(); // commented out KJZ
 
 			// get the element style attribute to restore it then
 			var style = $self.attr('style');
 
 			// place it so it displays as usually but hidden
 			$self.css({
+        display: 'block',
 				position: 'absolute',
 				visibility: 'hidden'
 			});
@@ -70,7 +79,8 @@
 				paddingTop: paddingTop,
 				paddingBottom: paddingBottom
 			}, duration, easing, function() {
-				$self.attr('style', $.type(style) === 'string' ? style : null);
+        console.log("setting style back to?", style);
+				//$self.attr('style', $.type(style) === 'string' ? style : null); //comented out KJZ
 				$self.each(complete);
 			});
 		});

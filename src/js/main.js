@@ -17,6 +17,43 @@ $.fn.tmpl = function(d) {
     return $(s);
 };
 
+var checkiday = {
+  months: [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+  ],
+
+  view: "list",
+
+  calendar_rendered: false,
+
+  noop: function(){return;},
+
+  directions: {
+    left:1,
+    right: -1
+  },
+
+  caldirections: {
+    left: "gotoPreviousMonth",
+    right: "gotoNextMonth"
+  },
+
+  transitionInProgress: false,
+
+  date : new Date()
+};
+
 function formatDate(date){
   var today = date,
       dd = today.getDate(),
@@ -38,32 +75,6 @@ function formatDate(date){
 
   return ret;
 }
-
-var checkiday = {
-  months: [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-  ],
-
-  directions: {
-    left:1,
-    right: -1
-  },
-
-  transitionInProgress: false,
-
-  date : new Date()
-};
 
 function AddDays(date, amount){
   var tzOff = date.getTimezoneOffset() * 60 * 1000;
@@ -215,87 +226,101 @@ function renderPage(date){
   getHolidays(date);
 }
 
-function renderCalendar(){
-  var $calendar = $( '#calendar' ),
-  cal = $calendar.calendario( {
+function updateMonthYear() {
+  var $month = $( '#custom-month' ).html( checkiday.cal.getMonthName() ),
+  $year = $( '#custom-year' ).html( checkiday.cal.getYear() );
+  $month.html( checkiday.cal.getMonthName() );
+  $year.html( checkiday.cal.getYear() );
+}
+
+function generateSwipeEvent(direction){
+  return function(e){
+    if(checkiday.view === 'list'){
+      checkiday.date = AddDays(checkiday.date, checkiday.directions[direction]);
+      slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions[direction]);
+    }else if(checkiday.view === 'cal'){
+      checkiday.cal[checkiday.caldirections[direction]]( updateMonthYear );
+    }
+  };
+}
+
+function ensureCalendar(){
+  if(checkiday.calendar_rendered === true){return;}
+  checkiday.calendar_rendered = true;
+  
+  var $calendar = $( '#calendar' );
+
+  checkiday.cal = $calendar.calendario( {
     onDayClick : function( $el, $contentEl, dateProperties ) {
       var date = new Date(Date.parse(dateProperties.monthname + " " + dateProperties.day + ", " + dateProperties.year));
       $('.page').remove();
       checkiday.date = date;
       renderPage(date);
-      flipTransition('#cal-view', '#list-view');
+      flipTransition('#cal-view', '#list-view', true, checkiday.noop, function(){
+        checkiday.view = 'list';
+      });
     },
     displayWeekAbbr : true
-  } ).data('calendario'),
-  $month = $( '#custom-month' ).html( cal.getMonthName() ),
-  $year = $( '#custom-year' ).html( cal.getYear() );
-
-  function updateMonthYear() {
-    $month.html( cal.getMonthName() );
-    $year.html( cal.getYear() );
-  }
+  } ).data('calendario');
 
   $(document).on('click', "#cal-view h1 .next", function(e){
-    cal.gotoNextMonth( updateMonthYear );
+    checkiday.cal.gotoNextMonth( updateMonthYear );
   });
 
   $(document).on('click', "#cal-view h1 .prev", function(e){
-    cal.gotoPreviousMonth( updateMonthYear );
+    checkiday.cal.gotoPreviousMonth( updateMonthYear );
   });
 
 }
 
-
-  var $doc = $(document),
+$(document).ready(function() {
+  var $pager = $('#pager'),
+      $doc = $(document),
       Modernizr = window.Modernizr;
 
-  $(document).ready(function() {
-    $.fn.foundationAlerts           ? $doc.foundationAlerts() : null;
-    $.fn.foundationButtons          ? $doc.foundationButtons() : null;
-    $.fn.foundationAccordion        ? $doc.foundationAccordion() : null;
-    $.fn.foundationNavigation       ? $doc.foundationNavigation() : null;
-    $.fn.foundationTopBar           ? $doc.foundationTopBar() : null;
-    $.fn.foundationCustomForms      ? $doc.foundationCustomForms() : null;
-    $.fn.foundationMediaQueryViewer ? $doc.foundationMediaQueryViewer() : null;
-    $.fn.foundationTabs             ? $doc.foundationTabs({callback : $.foundation.customForms.appendCustomMarkup}) : null;
-    $.fn.foundationTooltips         ? $doc.foundationTooltips() : null;
-    $.fn.foundationMagellan         ? $doc.foundationMagellan() : null;
-    $.fn.foundationClearing         ? $doc.foundationClearing() : null;
-    $.fn.placeholder                ? $('input, textarea').placeholder() : null;
+  $.fn.foundationAlerts           ? $doc.foundationAlerts() : null;
+  $.fn.foundationButtons          ? $doc.foundationButtons() : null;
+  $.fn.foundationAccordion        ? $doc.foundationAccordion() : null;
+  $.fn.foundationNavigation       ? $doc.foundationNavigation() : null;
+  $.fn.foundationTopBar           ? $doc.foundationTopBar() : null;
+  $.fn.foundationCustomForms      ? $doc.foundationCustomForms() : null;
+  $.fn.foundationMediaQueryViewer ? $doc.foundationMediaQueryViewer() : null;
+  $.fn.foundationTabs             ? $doc.foundationTabs({callback : $.foundation.customForms.appendCustomMarkup}) : null;
+  $.fn.foundationTooltips         ? $doc.foundationTooltips() : null;
+  $.fn.foundationMagellan         ? $doc.foundationMagellan() : null;
+  $.fn.foundationClearing         ? $doc.foundationClearing() : null;
+  $.fn.placeholder                ? $('input, textarea').placeholder() : null;
 
-    $('#pager').on('swipeRight',function(e){
-      checkiday.date = AddDays(checkiday.date, -1);
-      slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.right);
-    });
+  $pager.on('swipeRight', generateSwipeEvent('right'));
+  $pager.on('swipeLeft',generateSwipeEvent('left'));
 
-    $('#pager').on('swipeLeft',function(e){
-      checkiday.date = AddDays(checkiday.date, 1);
-      slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions.left);
-    });
-
-    $(document).on('click', ".holiday_button", function(e){
-      var $this = $(this);
-      $this.next('.holiday_actions').slideToggle('slow');
-    });
-
-    $(document).on('click', "#list-view h1 .next", function(e){
-      $('#pager').trigger('swipeLeft');
-    });
-
-    $(document).on('click', "#list-view h1 .prev", function(e){
-      $('#pager').trigger('swipeRight');
-    });
-
-    $(document).on('click', "#list-view h1 .switch", function(e){
-      flipTransition("#list-view", "#cal-view");
-    });
-
-    $(document).on('click', "#cal-view h1 .switch", function(e){
-      flipTransition("#cal-view", "#list-view");
-    });
-
-    renderPage(checkiday.date);
-    renderCalendar();
+  $doc.on('click', ".holiday_button", function(e){
+    var $this = $(this);
+    $this.next('.holiday_actions').slideToggle();
   });
+
+  $doc.on('click', "#list-view h1 .next", function(e){
+    $('#pager').trigger('swipeLeft');
+  });
+
+  $doc.on('click', "#list-view h1 .prev", function(e){
+    $('#pager').trigger('swipeRight');
+  });
+
+  $doc.on('click', "#list-view h1 .switch", function(e){
+    flipTransition("#list-view", "#cal-view", true, checkiday.noop, function(){
+      checkiday.view = "cal";
+      ensureCalendar();
+    });
+  });
+
+  $doc.on('click', "#cal-view h1 .switch", function(e){
+    flipTransition("#cal-view", "#list-view", true, checkiday.noop, function(){
+      checkiday.view = "list";
+    });
+  });
+
+  renderPage(checkiday.date);
+});
 
 
