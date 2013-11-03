@@ -82,8 +82,13 @@ body{
   text-align: left;
 }
 
+.holiday_button{
+  position: relative;
+}
+
 .holiday_button i{
-  margin-right: 10px;
+  position:absolute;
+  right:10px;
 }
 
 .holiday_actions{

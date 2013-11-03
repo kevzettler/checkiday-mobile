@@ -45,8 +45,8 @@ var checkiday = {
   },
 
   caldirections: {
-    left: "gotoPreviousMonth",
-    right: "gotoNextMonth"
+    left: "gotoNextMonth",
+    right: "gotoPreviousMonth"
   },
 
   transitionInProgress: false,
@@ -227,14 +227,17 @@ function renderPage(date){
 }
 
 function updateMonthYear() {
-  var $month = $( '#custom-month' ).html( checkiday.cal.getMonthName() ),
-  $year = $( '#custom-year' ).html( checkiday.cal.getYear() );
+  var $month = $( '#custom-month' ),
+  $year = $( '#custom-year' );
+
   $month.html( checkiday.cal.getMonthName() );
   $year.html( checkiday.cal.getYear() );
 }
 
 function generateSwipeEvent(direction){
   return function(e){
+    console.log("generated swipe event", direction);
+    console.log("what view", checkiday.view);
     if(checkiday.view === 'list'){
       checkiday.date = AddDays(checkiday.date, checkiday.directions[direction]);
       slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions[direction]);
@@ -262,6 +265,8 @@ function ensureCalendar(){
     },
     displayWeekAbbr : true
   } ).data('calendario');
+
+  updateMonthYear();
 
   $(document).on('click', "#cal-view h1 .next", function(e){
     checkiday.cal.gotoNextMonth( updateMonthYear );
@@ -291,8 +296,8 @@ $(document).ready(function() {
   $.fn.foundationClearing         ? $doc.foundationClearing() : null;
   $.fn.placeholder                ? $('input, textarea').placeholder() : null;
 
-  $pager.on('swipeRight', generateSwipeEvent('right'));
-  $pager.on('swipeLeft',generateSwipeEvent('left'));
+  $doc.on('swipeRight', generateSwipeEvent('right'));
+  $doc.on('swipeLeft',generateSwipeEvent('left'));
 
   $doc.on('click', ".holiday_button", function(e){
     var $this = $(this);
