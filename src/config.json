@@ -1,37 +1,18 @@
 {
 	"config_version": "4",
 	"name": "checkiday-mobile",
-	"author": "kevin@omniata.com",
+	"author": "kevzettler@gmail.com",
 	"version": "0.1",
-	"platform_version": "v2.0.1",
-	"description": "A list of today's holidays, most of which you won't find on a calendar!",
+	"platform_version": "v2.0.4",
+	"description": "An empty app created by default",
 	"core": {
 		"general": {
 			"logging": {
 				"level": "DEBUG"
 			},
 			"reload": true
-		},
-		"android": {
-			"minimum_version": "5"
-		},
-		"ios": {
-			"minimum_version": "4.3",
-			"device_family": "any"
 		}
 	},
 	"modules": {
-		"request": {
-			"version": "2.3",
-			"config": {
-				"permissions": [
-					"http://www.checkiday.com/api/*"
-				]
-			}
-		},
-		"prefs": {
-			"version": "2.0"
-		}
-	},
-	"homepage": "www.checkiday.com"
+	}
 }
