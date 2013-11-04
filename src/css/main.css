@@ -56,6 +56,35 @@ body{
   text-align:center;
 }
 
+html > body .holiday_actions .stButton{
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  height:30px !important;
+  width:30px !important;
+}
+
+html > body .holiday_actions .stLarge{
+  background-image: none !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  height:30px !important;
+  width:30px !important;
+}
+
+.st_facebook_large, .st_twitter_large, .st_email_large{
+  position: relative;
+}
+
+.st_facebook_large i.fa, .st_twitter_large i.fa, .st_email_large i.fa{
+  font-size: 30px;
+  position: absolute;
+}
+
+.holiday_actions .fa-external-link{
+  position: relative;
+  bottom: 7px;
+  margin-right: 5px;
+}
 
 .header-row{
   min-height: 2.5em;
@@ -82,6 +111,8 @@ body{
   text-align: left;
 }
 
+
+
 .holiday_button{
   position: relative;
 }
@@ -94,8 +125,10 @@ body{
 .holiday_actions{
   list-style-type: none;
   display: none;
-  background: #222;
+  background: #efefef;
   width: 100%;
+  padding-top: 6px !important;
+  height: 45px
 }
 
 .holiday_actions a{
@@ -107,8 +140,8 @@ body{
   margin-right: 10px !important;
 }
 
-.holiday_actions a{
-  color: #FFF;
+.holiday_actions .fa{
+  color: #222;
 }
 
 h1, h2{
