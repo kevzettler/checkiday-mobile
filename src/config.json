@@ -35,21 +35,21 @@
 		"icons": {
 			"version": "2.1",
 			"config": {
-				"android": {
-					"36": "",
-					"48": "",
-					"72": ""
-				},
 				"ios": {
-					"57": "",
-					"72": "",
-					"76": "",
-					"114": "",
-					"120": "",
-					"144": "",
-					"152": ""
+					"57": "img/icons/ios/57.png",
+					"72": "img/icons/ios/72.png",
+					"76": "img/icons/ios/76.png",
+					"114": "img/icons/ios/114.png",
+					"120": "img/icons/ios/120.png",
+					"144": "img/icons/ios/144.png",
+					"152": "img/icons/ios/152.png",
+					"512": "img/icons/ios/512.png"
 				}
 			}
+		},
+		"launchimage": {
+			"version": "2.1",
+			"config": {}
 		}
 	},
 	"homepage": "www.checkiday.com"
