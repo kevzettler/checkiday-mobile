@@ -8,6 +8,11 @@
     <link href="css/calendar.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <script src="js/modernizr.foundation.js"></script>
+    <script type="text/javascript">
+      var switchTo5x=true;
+      var __st_loadLate=true;
+    </script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 	</head>
 	<body>
     <div id="main-container">
@@ -31,8 +36,8 @@
                 <i class="fa fa-caret-left"></i>
               </a>
               <span>
-                <cite id="custom-month">Month</cite>
-                <cite id="custom-year">Year</cite>
+                <cite id="custom-month"></cite>
+                <cite id="custom-year"></cite>
               </span>
               <a href="javascript:void(0);" class="switch">
                 <i class="fa fa-list-ul"></i>
@@ -81,22 +86,31 @@
 
     <script type="text/html" id="holiday_template">
       <li>
-        <a href="javascript:void()" class="secondary button holiday_button" data-href="${url}">${name} <i class="fa fa-arrow-circle-o-down"></i></a>
+        <a href="javascript:void()" class="secondary button holiday_button">${name} <i class="fa fa-arrow-circle-o-down"></i></a>
         <ul class="holiday_actions inline-list">
           <li>
             <a href="${url}"><i class="fa fa-external-link"></i></a>
           </li>
           <li>
-            <a href="${url}"><i class="fa fa-facebook-square"></i></a>
+            <span class='st_facebook_large' displayText='Facebook' st_title="${dyno_title}">
+               <i class="fa fa-facebook-square"></i>
+            </span>
           </li>
           <li>
-            <a href="${url}"><i class="fa fa-twitter"></i></a>
+            <span class='st_twitter_large' displayText='Tweet' st_title="${dyno_title}">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </li>
+          <li>
+            <span class='st_email_large' displayText='Email' st_title="${dyno_title}">
+              <i class="fa fa-envelope-o"></i>
+            </span>
           </li>
         </ul>
       </li>
     </script>
 
-    <script src="https://trigger.io/catalyst/target/target-script-min.js#ACDFDEC4-8D1F-4C54-965E-E24840777361"></script>
+    <script src="https://trigger.io/catalyst/target/target-script-min.js#478B7040-41F8-4C34-9B27-51199E42689B"></script>
     <script src="js/zepto.js"></script>
     <script src="js/zepto.selector.js"></script>
     <script src="js/zepto.fn.slide.js"></script>

@@ -124,7 +124,8 @@ function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
 }
 
 
-function slideTranistion(wrapperEl, currentPageEl, nextPageEl, delta) {
+
+function slideTransition(wrapperEl, currentPageEl, nextPageEl, delta) {
   if (checkiday.transitionInProgress) {
     return;
   }
@@ -175,11 +176,21 @@ function slideTranistion(wrapperEl, currentPageEl, nextPageEl, delta) {
 function renderHolidays(holidays){
   var holidays_fragment = $('<div></div>');
   for(var i=0; i<holidays.length; i++){
+    holidays[i].dyno_title = (function(){
+      var prefix = formatDate(checkiday.date).nice + " is";
+
+      if(formatDate(checkiday.date).ugly === formatDate(new Date()).ugly){
+        prefix = "Today is";
+      }
+
+      return prefix+" "+holidays[i].name + "!";
+    })();
     $('#holiday_template').tmpl(holidays[i]).appendTo(holidays_fragment);
   }
 
   $('.day-holiday-list').last().empty();
   holidays_fragment.children().appendTo($('.day-holiday-list').last());
+  stButtons.locateElements();
 }
 
 function prefsGetHandler(result){
@@ -236,11 +247,9 @@ function updateMonthYear() {
 
 function generateSwipeEvent(direction){
   return function(e){
-    console.log("generated swipe event", direction);
-    console.log("what view", checkiday.view);
     if(checkiday.view === 'list'){
       checkiday.date = AddDays(checkiday.date, checkiday.directions[direction]);
-      slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions[direction]);
+      slideTransition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions[direction]);
     }else if(checkiday.view === 'cal'){
       checkiday.cal[checkiday.caldirections[direction]]( updateMonthYear );
     }
@@ -326,6 +335,7 @@ $(document).ready(function() {
   });
 
   renderPage(checkiday.date);
+  stLight.options({publisher: "e8005f24-cf8c-4f87-837e-d269f4401148", doNotHash: false, doNotCopy: false, hashAddressBar: false});
 });
 
 
