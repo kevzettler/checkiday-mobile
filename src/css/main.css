@@ -44,6 +44,7 @@ body{
 .page{
   width:100%;
   -webkit-backface-visibility:hidden;
+  position: absolute;
 }
 
 #footer{
@@ -120,6 +121,7 @@ html > body .holiday_actions .stLarge{
 .holiday_button i{
   position:absolute;
   right:10px;
+  font-size: 18px;
 }
 
 .holiday_actions{
@@ -133,7 +135,7 @@ html > body .holiday_actions .stLarge{
 
 .holiday_actions a{
   margin-left:10px;
-  font-size:30px;
+  font-size:35px;
 }
 
 .holiday_actions li{

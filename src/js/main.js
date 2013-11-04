@@ -124,7 +124,8 @@ function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
 }
 
 
-function slideTranistion(wrapperEl, currentPageEl, nextPageEl, delta) {
+
+function slideTransition(wrapperEl, currentPageEl, nextPageEl, delta) {
   if (checkiday.transitionInProgress) {
     return;
   }
@@ -246,11 +247,9 @@ function updateMonthYear() {
 
 function generateSwipeEvent(direction){
   return function(e){
-    console.log("generated swipe event", direction);
-    console.log("what view", checkiday.view);
     if(checkiday.view === 'list'){
       checkiday.date = AddDays(checkiday.date, checkiday.directions[direction]);
-      slideTranistion($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions[direction]);
+      slideTransition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions[direction]);
     }else if(checkiday.view === 'cal'){
       checkiday.cal[checkiday.caldirections[direction]]( updateMonthYear );
     }
