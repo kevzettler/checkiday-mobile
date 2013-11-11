@@ -2,3 +2,6 @@
 .lib/
 .template/
 development/
+trigger_creds.json
+dist/
+forge-error.log
