@@ -11,6 +11,7 @@ module.exports = function(grunt) {
       build: {
         src: 'src/<%= pkg.name %>.js',
         dest: 'build/<%= pkg.name %>.min.js'
+      }
     },
 
     env: {
@@ -25,21 +26,13 @@ module.exports = function(grunt) {
 
     preprocess : {
       dev : {
-        src : './src/tmpl/index.html',
-        dest : './dev/index.html'
+        src : './src/index.html',
+        dest : './dist/index.html'
       },
 
       prod : {
-        src : './src/tmpl/index.html',
-        dest : '../<%= pkg.version %>/<%= now %>/<%= ver %>/index.html',
-        options : {
-          context : {
-            name : '<%= pkg.name %>',
-            version : '<%= pkg.version %>',
-            now : '<%= now %>',
-            ver : '<%= ver %>'
-          }
-        }
+        src : './src/index.html',
+        dest : './dist/<%= pkg.version %>/index.html'
       }
     }
   });
