@@ -33,7 +33,15 @@ body{
 
 .header-row{
   width:100%;
+}
 
+html > body .switch{
+  width:35px;
+  border-color:#222;
+  background:transparent;
+  margin:0;
+  padding:10px 5px;
+  text-align: center;
 }
 
 .app-page{
@@ -81,9 +89,22 @@ html > body .holiday_actions .stLarge{
   position: absolute;
 }
 
-.holiday_actions .fa-external-link{
+.learn_more_container{
   position: relative;
-  bottom: 7px;
+  margin-right: 40px;
+}
+
+.holiday_actions .fa-question{
+  position: absolute;
+  top:4px;
+  right: -17px;
+}
+
+.holiday_actions .fa-external-link{
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  right: -39px;
   margin-right: 5px;
 }
 
@@ -135,7 +156,11 @@ html > body .holiday_actions .stLarge{
 
 .holiday_actions a{
   margin-left:10px;
-  font-size:35px;
+  color:#222;
+}
+
+.holiday_actions cite{
+  color:#9C9A9A;
 }
 
 .holiday_actions li{
@@ -183,7 +208,7 @@ ul, li{
 
 #calendar-holder{
   height: 100%;
-  margin-top: 47px;
+  margin-top: 65px;
 }
 
 #cal-view{
