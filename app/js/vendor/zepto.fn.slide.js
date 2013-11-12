@@ -79,7 +79,6 @@
 				paddingTop: paddingTop,
 				paddingBottom: paddingBottom
 			}, duration, easing, function() {
-        console.log("setting style back to?", style);
 				//$self.attr('style', $.type(style) === 'string' ? style : null); //comented out KJZ
 				$self.each(complete);
 			});

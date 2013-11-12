@@ -61,6 +61,9 @@ function formatDate(date){
       yyyy = today.getFullYear(),
       ret = {};
 
+  ret.dd = dd;
+  ret.mm = mm;
+  ret.yyyy = yyyy;
   ret.nice = checkiday.months[mm-1]+ " " + dd + ", " + yyyy;
   
   if(dd<10){
@@ -93,6 +96,7 @@ function AddDays(date, amount){
 }
 
 function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
+  console.log("flipTransition", fromPage, toPage, reverse, onStart, onEnd);
   //get elements
   fromPage = $(fromPage);
   toPage = $(toPage);
@@ -109,10 +113,12 @@ function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
     toPage.addClass("flip in reverse active");
   }
 
+   fromPage.unbind('webkitAnimationEnd');
    fromPage.bind('webkitAnimationEnd', function(){
       fromPage.removeClass("flip out in reverse active");
    });
    
+   toPage.unbind('webkitAnimationEnd');
    toPage.bind('webkitAnimationEnd', function(){
     toPage.removeClass("flip out in reverse");
     toPage.addClass("active");
@@ -185,6 +191,11 @@ function renderHolidays(holidays){
 
       return prefix+" "+holidays[i].name + "!";
     })();
+
+    holidays[i].home_url = (function(){
+      //return "http://checkiday.com/" + holidays[i].date.split('\/')[0] + "/" + holidays[i].date.split("\/")[1];
+    })();
+
     $('#holiday_template').tmpl(holidays[i]).appendTo(holidays_fragment);
   }
 
@@ -259,7 +270,7 @@ function generateSwipeEvent(direction){
 function ensureCalendar(){
   if(checkiday.calendar_rendered === true){return;}
   checkiday.calendar_rendered = true;
-  
+
   var $calendar = $( '#calendar' );
 
   checkiday.cal = $calendar.calendario( {
@@ -305,8 +316,8 @@ $(document).ready(function() {
   $.fn.foundationClearing         ? $doc.foundationClearing() : null;
   $.fn.placeholder                ? $('input, textarea').placeholder() : null;
 
-  $doc.on('swipeRight', generateSwipeEvent('right'));
-  $doc.on('swipeLeft',generateSwipeEvent('left'));
+  $doc.on('swipeRight', '#pager', generateSwipeEvent('right'));
+  $doc.on('swipeLeft', '#pager', generateSwipeEvent('left'));
 
   $doc.on('click', ".holiday_button", function(e){
     var $this = $(this);

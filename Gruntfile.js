@@ -44,7 +44,13 @@ module.exports = function(grunt) {
     cssmin:{
       combine:{
         files:{
-          'dist/css/main.min.css': ['app/css/*.css']
+          'dist/css/main.min.css': [
+            "app/css/normalize.css",
+            "app/css/foundation.min.css",
+            "app/css/main.css",
+            "app/css/calendar.css",
+            "app/css/font-awesome.min.css"
+          ]
         }
       }
     },
@@ -96,13 +102,21 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Register task(s).
-  grunt.registerTask('default', ['dev']);
-  grunt.registerTask('dev', ['env:dev', 'clean', 'copy', 'cssmin', 'uglify', 'preprocess:dev', 'sim']);
-  grunt.registerTask('prod', ['env:prod', 'clean', 'cssmin', 'uglify', 'preprocess:prod']);
+  grunt.registerTask('default', ['dev','sim']);
+
+  grunt.registerTask('prepare', ['clean', 'copy', 'cssmin', 'uglify']);
+  grunt.registerTask('dev', ['env:dev', 'prepare', 'preprocess:dev']);
+  grunt.registerTask('prod', ['env:prod', 'prepare', 'preprocess:prod']);
 
   grunt.registerTask("build", ['forge:ios_build']);
   grunt.registerTask("sim", ['build', 'forge:ios_sim']);
   grunt.registerTask("device", ['build', 'forge:ios_device']);
   grunt.registerTask("package", ['build', 'forge:ios_package']);
+
+  grunt.registerTask("dev:build:sim", ['dev','sim']);
+  grunt.registerTask('dev:build:device', ['dev', 'device']);
+
+  grunt.registerTask("prod:build:sim", ['prod','sim']);
+  grunt.registerTask('prod:build:device', ['prod', 'device']);
 
 };
