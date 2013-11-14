@@ -35,6 +35,11 @@ body{
   width:100%;
 }
 
+.header-row cite{
+  text-decoration:none;
+  font-style: normal;
+}
+
 html > body .switch{
   width:35px;
   border-color:#222;

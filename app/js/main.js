@@ -244,7 +244,9 @@ function getHolidays(date){
 }
 
 function renderPage(date){
-  $('#page_template').tmpl({date: formatDate(date).nice}).appendTo('#pager');
+  var dateformat = formatDate(date);
+
+  $('#page_template').tmpl({date: dateformat.nice}).appendTo('#pager');
   getHolidays(date);
 }
 
@@ -268,7 +270,11 @@ function generateSwipeEvent(direction){
 }
 
 function ensureCalendar(){
-  if(checkiday.calendar_rendered === true){return;}
+  if(checkiday.calendar_rendered === true){
+    var df = formatDate(checkiday.date);
+        checkiday.cal.goto(df.mm, df.yyyy);
+    return;
+  }
   checkiday.calendar_rendered = true;
 
   var $calendar = $( '#calendar' );
@@ -346,6 +352,14 @@ $(document).ready(function() {
   });
 
   renderPage(checkiday.date);
+
+  //Prepopulate the calendar header
+  var $month = $( '#custom-month' ),
+      $year = $( '#custom-year' ),
+      dateformat = formatDate(checkiday.date);
+  $month.html( checkiday.months[dateformat.mm-1] );
+  $year.html( dateformat.yyyy );
+
   stLight.options({publisher: "e8005f24-cf8c-4f87-837e-d269f4401148", doNotHash: false, doNotCopy: false, hashAddressBar: false});
 });
 
