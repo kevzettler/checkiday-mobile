@@ -96,7 +96,6 @@ function AddDays(date, amount){
 }
 
 function flipTransition(fromPage,toPage,reverse,onStart,onEnd) {
-  console.log("flipTransition", fromPage, toPage, reverse, onStart, onEnd);
   //get elements
   fromPage = $(fromPage);
   toPage = $(toPage);
@@ -272,7 +271,7 @@ function generateSwipeEvent(direction){
 function ensureCalendar(){
   if(checkiday.calendar_rendered === true){
     var df = formatDate(checkiday.date);
-        checkiday.cal.goto(df.mm, df.yyyy);
+        checkiday.cal.get(df.mm, df.yyyy);
     return;
   }
   checkiday.calendar_rendered = true;
@@ -322,8 +321,8 @@ $(document).ready(function() {
   $.fn.foundationClearing         ? $doc.foundationClearing() : null;
   $.fn.placeholder                ? $('input, textarea').placeholder() : null;
 
-  $doc.on('swipeRight', '#pager', generateSwipeEvent('right'));
-  $doc.on('swipeLeft', '#pager', generateSwipeEvent('left'));
+  $doc.on('swipeRight', generateSwipeEvent('right'));
+  $doc.on('swipeLeft', generateSwipeEvent('left'));
 
   $doc.on('click', ".holiday_button", function(e){
     var $this = $(this);
@@ -331,11 +330,11 @@ $(document).ready(function() {
   });
 
   $doc.on('click', "#list-view h1 .next", function(e){
-    $('#pager').trigger('swipeLeft');
+    $doc.trigger('swipeLeft');
   });
 
   $doc.on('click', "#list-view h1 .prev", function(e){
-    $('#pager').trigger('swipeRight');
+    $doc.trigger('swipeRight');
   });
 
   $doc.on('click', "#list-view h1 .switch", function(e){
