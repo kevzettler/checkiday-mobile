@@ -147,8 +147,14 @@ function slideTransition(wrapperEl, currentPageEl, nextPageEl, delta) {
     position: 'absolute',
     top: 0,
     left: (delta*transitionDistance)+'px',
-    "z-index": "-2"
+    "z-index": "-5"
   });
+
+  $current.css({
+    position: 'absolute',
+    top: 0,
+    "z-index": "20"
+  })
 
   // insert into wrapper for transition
   $wrapper.append($next);
@@ -171,7 +177,7 @@ function slideTransition(wrapperEl, currentPageEl, nextPageEl, delta) {
       $wrapper.attr('style', '');
 
       // remove the position absoluteness
-      $next.css({top: '', left: '', position: '', 'z-index': 2});
+      $next.css({top: '', left: '', position: '', 'z-index': 5});
 
       checkiday.transitionInProgress = false;
     }
