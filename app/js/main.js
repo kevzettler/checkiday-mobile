@@ -271,7 +271,8 @@ function generateSwipeEvent(direction){
 function ensureCalendar(){
   if(checkiday.calendar_rendered === true){
     var df = formatDate(checkiday.date);
-        checkiday.cal.get(df.mm, df.yyyy);
+        checkiday.cal.get(df.mm-1, df.yyyy);
+        updateMonthYear();
     return;
   }
   checkiday.calendar_rendered = true;
