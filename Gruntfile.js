@@ -10,7 +10,10 @@ module.exports = function(grunt) {
 
     clean: {
       main:{
-        src: "dist"
+        src: ["dist/*",
+              "!dist/config.json",
+              "!dist/identity.json"
+             ]
       }
     },
 
