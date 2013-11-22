@@ -198,7 +198,7 @@ function renderHolidays(holidays){
     })();
 
     holidays[i].home_url = (function(){
-      //return "http://checkiday.com/" + holidays[i].date.split('\/')[0] + "/" + holidays[i].date.split("\/")[1];
+      return "http://www.checkiday.com/" + (checkiday.date.getMonth()+1) + "/" + checkiday.date.getDate();
     })();
 
     $('#holiday_template').tmpl(holidays[i]).appendTo(holidays_fragment);
@@ -332,8 +332,13 @@ $(document).ready(function() {
   $doc.on('swipeLeft', generateSwipeEvent('left'));
 
   $doc.on('click', ".holiday_button", function(e){
-    var $this = $(this);
-    $this.next('.holiday_actions').slideToggle();
+    
+    if ($(this).next().height() === 0) { // swap up/down arrow icon
+      $(this).find('.fa-arrow-circle-o-down').addClass('fa-arrow-circle-o-up');
+    } else {
+      $(this).find('.fa-arrow-circle-o-down').removeClass('fa-arrow-circle-o-up');
+    }
+    $(this).next('.holiday_actions').slideToggle();
   });
 
   $doc.on('click', "#list-view h1 .next", function(e){
