@@ -5,4 +5,5 @@ development/
 trigger_creds.json
 dist/*
 !dist/config.json
+!dist/identity.json
 forge-error.log
