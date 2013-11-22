@@ -20,6 +20,12 @@ module.exports = function(grunt) {
         cwd: 'app/',
         src: ['**'],
         dest: 'dist/'
+      },
+      config:{
+        expand: true,
+        cwd: './',
+        src: ['config.json'],
+        dest: 'dist/'
       }
     },
 
@@ -104,7 +110,7 @@ module.exports = function(grunt) {
   // Register task(s).
   grunt.registerTask('default', ['dev','sim']);
 
-  grunt.registerTask('prepare', ['clean', 'copy', 'cssmin', 'uglify']);
+  grunt.registerTask('prepare', ['clean', 'copy', 'copy:config', 'cssmin', 'uglify']);
   grunt.registerTask('dev', ['env:dev', 'prepare', 'preprocess:dev']);
   grunt.registerTask('prod', ['env:prod', 'prepare', 'preprocess:prod']);
 
