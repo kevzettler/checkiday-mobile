@@ -85,7 +85,7 @@ module.exports = function(grunt) {
           password: '<%= trigger_creds.password %>'
         }
       },
-      ios_sim: { args: ['run', 'ios'] },
+      ios_sim: { args: ['run', 'ios', '--ios.device', 'simulator'] },
       ios_device: { args: ['run', 'ios', '--ios.device', 'device'] },
       ios_package: { args: ['package', 'ios'] }
     }
