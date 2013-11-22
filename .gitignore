@@ -3,5 +3,6 @@
 .template/
 development/
 trigger_creds.json
-dist/
+dist/*
+!dist/config.json
 forge-error.log
