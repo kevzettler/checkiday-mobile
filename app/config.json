@@ -43,13 +43,29 @@
 					"120": "img/icons/ios/120.png",
 					"144": "img/icons/ios/144.png",
 					"152": "img/icons/ios/152.png",
-					"512": "img/icons/ios/512.png"
+					"512": "img/icons/ios/512.png",
+					"prerendered": true
 				}
 			}
 		},
 		"launchimage": {
-			"version": "2.1",
-			"config": {}
+			"version": "2.2",
+			"config": {
+				"ios": {
+					"1536x2048": "img/splash/1536x2048.png",
+					"320x480": "img/splash/320x480.png",
+					"640x1136": "img/splash/640x1136.png",
+					"2048x1536": "img/splash/2048x1536.png",
+					"1536x2008": "img/splash/1536x2008.png",
+					"1024x768": "img/splash/1024x768.png",
+					"2048x1496": "img/splash/2048x1496.png",
+					"1024x748": "img/splash/1024x748.png",
+					"640x960": "img/splash/640x960.png",
+					"768x1004": "img/splash/768x1004.png",
+					"768x1024": "img/splash/768x1024.png"
+				},
+				"background-color": "#FFFFFF"
+			}
 		}
 	},
 	"homepage": "www.checkiday.com"
