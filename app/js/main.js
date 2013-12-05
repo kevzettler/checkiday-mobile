@@ -4,6 +4,13 @@ if(typeof forge != 'undefined'){
     var args_array = Array.prototype.slice.call(arguments);
     forge.logging.debug("Console.log: " + args_array.toString());
   };
+
+  console.log("we got admob?", forge.admob.footerbanner);
+
+
+  if(typeof forge.admob != "undefined"){
+    //forge.admob.footerbanner();
+  }
 }
 
 //zepto templates
@@ -271,6 +278,7 @@ function generateSwipeEvent(direction){
     }else if(checkiday.view === 'cal'){
       checkiday.cal[checkiday.caldirections[direction]]( updateMonthYear );
     }
+    forge.admob.refresh();
   };
 }
 
