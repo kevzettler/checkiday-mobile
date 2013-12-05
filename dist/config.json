@@ -68,7 +68,7 @@
 			}
 		},
 		"admob": {
-			"version": "0.2",
+			"version": "0.4",
 			"config": {
 				"Publisher ID": "a1529bbd54e3737"
 			}
