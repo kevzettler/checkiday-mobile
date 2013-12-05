@@ -9,7 +9,7 @@ if(typeof forge != 'undefined'){
 
 
   if(typeof forge.admob != "undefined"){
-    //forge.admob.footerbanner();
+    forge.admob.footerBanner();
   }
 }
 
