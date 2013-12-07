@@ -5,15 +5,13 @@ if(typeof forge != 'undefined'){
     forge.logging.debug("Console.log: " + args_array.toString());
   };
 
-  console.log("we got admob?", forge.admob.footerBanner);
-
   for(var prop in forge.admob){
     console.log("what?", prop, forge.admob[prop]);
   }
 
 
   if(typeof forge.admob != "undefined"){
-    forge.admob.footerBanner();
+    forge.admob.renderBanner();
   }
 }
 
