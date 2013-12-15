@@ -274,13 +274,13 @@ function updateMonthYear() {
 
 function generateSwipeEvent(direction){
   return function(e){
+    forge.admob.refresh();
     if(checkiday.view === 'list'){
       checkiday.date = AddDays(checkiday.date, checkiday.directions[direction]);
       slideTransition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions[direction]);
     }else if(checkiday.view === 'cal'){
       checkiday.cal[checkiday.caldirections[direction]]( updateMonthYear );
     }
-    forge.admob.refresh();
   };
 }
 
@@ -302,6 +302,7 @@ function ensureCalendar(){
       checkiday.date = date;
       renderPage(date);
       flipTransition('#cal-view', '#list-view', true, checkiday.noop, function(){
+        forge.admob.refresh();
         checkiday.view = 'list';
       });
     },
@@ -361,6 +362,7 @@ $(document).ready(function() {
 
   $doc.on('click', "#list-view h1 .switch", function(e){
     flipTransition("#list-view", "#cal-view", true, checkiday.noop, function(){
+      forge.admob.refresh();
       checkiday.view = "cal";
       ensureCalendar();
     });
@@ -368,6 +370,7 @@ $(document).ready(function() {
 
   $doc.on('click', "#cal-view h1 .switch", function(e){
     flipTransition("#cal-view", "#list-view", true, checkiday.noop, function(){
+      forge.admob.refresh();
       checkiday.view = "list";
     });
   });
