@@ -22,7 +22,7 @@
 	},
 	"modules": {
 		"request": {
-			"version": "2.3",
+			"version": "2.4",
 			"config": {
 				"permissions": [
 					"http://www.checkiday.com/api/*"
@@ -68,7 +68,7 @@
 			}
 		},
 		"admob": {
-			"version": "0.4.4",
+			"version": "0.4.5",
 			"config": {
 				"Publisher ID": "a1529bbd54e3737"
 			}
