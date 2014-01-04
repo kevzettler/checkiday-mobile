@@ -8,7 +8,7 @@
 				"developer_certificate_path": "/Users/kevzettler/Desktop/ios_development.cer"
 			}
 		},
-		"simulatorsdk": "7.0",
+		"simulatorsdk": "6.1",
 		"simulatorfamily": "iphone",
 		"device": "device"
 	}

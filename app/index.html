@@ -98,7 +98,10 @@
 
     <script type="text/html" id="holiday_template">
       <li>
-        <a href="javascript:void()" class="secondary button holiday_button">${name} <i class="fa fa-arrow-circle-o-down"></i></a>
+        <a href="javascript:void()" class="secondary button holiday_button">
+          <span>${name}</span>
+          <i class="fa fa-arrow-circle-o-down"></i>
+        </a>
         <ul class="holiday_actions inline-list">
           <li>
             <a href="${url}" class="learn_more_container">
@@ -154,6 +157,7 @@
 
     <!-- @if NODE_ENV == 'PRODUCTION' -->
     <script src="js/main.min.js"></script>
+    <script src="https://trigger.io/catalyst/target/target-script-min.js#BFFBC50A-1F09-4F0C-8944-17D552CD4B92"></script>
     <!-- @endif -->
 	</body>
 </html>
