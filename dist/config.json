@@ -2,7 +2,7 @@
 	"config_version": "4",
 	"name": "checkiday-mobile",
 	"author": "kevzettler@gmail.com",
-	"version": "0.1",
+	"version": "1.0",
 	"platform_version": "v2.1.0",
 	"description": "A list of today's holidays, most of which you won't find on a calendar!",
 	"core": {
@@ -10,14 +10,18 @@
 			"logging": {
 				"level": "DEBUG"
 			},
-			"reload": true
+			"reload": true,
+			"trusted_urls": [
+				"www.checkiday.com"
+			]
 		},
 		"android": {
 			"minimum_version": "5"
 		},
 		"ios": {
 			"minimum_version": "4.3",
-			"device_family": "any"
+			"device_family": "any",
+			"package_name": "com.checkiday"
 		}
 	},
 	"modules": {
@@ -70,7 +74,7 @@
 		"admob": {
 			"version": "0.4.5",
 			"config": {
-				"Publisher ID": "3618464762947859"
+				"Publisher ID": "ca-app-pub-3618464762947859/8791781218"
 			}
 		}
 	},
