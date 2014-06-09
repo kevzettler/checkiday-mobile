@@ -78,7 +78,7 @@ function dateIterater(i){
     if(counter === (365 * 2)){
       console.log("ALL DONE", tree);
       $('body').empty();
-      $('body').html("json = '"+JSON.stringify(tree)+"';");
+      $('body').html("hard_cache = "+JSON.stringify(tree)+";");
     }
   });
 }

@@ -5,11 +5,6 @@ if(typeof forge != 'undefined'){
     forge.logging.debug("Console.log: " + args_array.toString());
   };
 
-  for(var prop in forge.admob){
-    console.log("what?", prop, forge.admob[prop]);
-  }
-
-
   if(typeof forge.admob != "undefined"){
     forge.admob.footerBanner();
   }
@@ -163,7 +158,7 @@ function slideTransition(wrapperEl, currentPageEl, nextPageEl, delta) {
     position: 'absolute',
     top: 0,
     "z-index": "20"
-  })
+  });
 
   // insert into wrapper for transition
   $wrapper.append($next);
@@ -239,6 +234,14 @@ function prefsSetErrorHandler(error){
   console.log("pres set error handler", error);
 }
 
+function updateCheckHandler(result){
+  ugly_date = formatDate(checkiday.date).ugly;
+  if(typeof hard_cache[ugly_date].lastUpdate == 'undefined' || hard_cache[ugly_date].lastUpdate < result.lastUpdate){
+    hard_cache[ugly_date] = result;
+    requestGetHandler(result);
+  }
+}
+
 function requestGetHandler(result){
   renderHolidays(result.holidays);
   forge.prefs.set(this.date, result.holidays, prefsSetHandler, prefsSetErrorHandler);
@@ -252,6 +255,7 @@ function getHolidays(date){
   var state = {date: formatDate(date).ugly};
   if(typeof hard_cache[state.date] != 'undefined'){
     renderHolidays(hard_cache[state.date].holidays);
+    forge.request.get("http://www.checkiday.com/api/3/?d="+state.date, $.proxy(updateCheckHandler, this), requestGetErrorHandler);
   }else{
     forge.prefs.get(date, $.proxy(prefsGetHandler, state), prefsErrorHandler);
   }

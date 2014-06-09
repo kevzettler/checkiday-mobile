@@ -61,6 +61,7 @@ html > body .switch{
   width:100%;
   -webkit-backface-visibility:hidden;
   position: absolute;
+  padding-bottom:50px;
 }
 
 #footer{
