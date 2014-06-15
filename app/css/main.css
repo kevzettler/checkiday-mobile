@@ -6,6 +6,7 @@ html,body{
 body{
   -webkit-perspective: 1000;
   position: absolute;
+  top:0px;
   -webkit-transform: translate3d(0,  0,  0) rotate(0) scale(1);
 }
 
@@ -17,7 +18,9 @@ body{
   height:100%;
   width:100%;
   position:relative;
+  top:0px;
 }
+
 #pager{
   height:100%;
   width:100%;
@@ -55,6 +58,7 @@ html > body .switch{
 .app-page{
   position:absolute;
   width: 100%;
+  top:0px;
 }
 
 .page{
@@ -119,10 +123,6 @@ html > body .holiday_actions .stLarge{
 
 .header-row{
   min-height: 2.5em;
-  position:fixed;
-  z-index:1;
-  top:0;
-  left:0;
   background-color: red;
   background: #ff9595; /* Old browsers */
   background: -moz-linear-gradient(top, #ff9595 0%, #ff3030 100%); /* FF3.6+ */
@@ -132,6 +132,14 @@ html > body .holiday_actions .stLarge{
   background: -ms-linear-gradient(top, #ff9595 0%,#ff3030 100%); /* IE10+ */
   background: linear-gradient(to bottom, #ff9595 0%,#ff3030 100%); /* W3C */
 }
+
+/* fixed header not working on device wtf */
+/*.page .header-row{
+  position:fixed;
+  z-index:9999;
+  top:0;
+  left:0;
+}*/
 
 .day-holiday-list .button{
   padding:20px 0 20px 10px;

@@ -3,7 +3,7 @@
 	"name": "checkiday-mobile",
 	"author": "kevzettler@gmail.com",
 	"version": "1.0",
-	"platform_version": "v2.1.0",
+	"platform_version": "v2.1.6",
 	"description": "A list of today's holidays, most of which you won't find on a calendar!",
 	"core": {
 		"general": {

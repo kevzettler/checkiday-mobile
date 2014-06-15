@@ -11,6 +11,10 @@ if(typeof forge != 'undefined'){
 }
 
 //zepto templates
+if(typeof $ === 'undefined'){
+  var $ = Zepto;
+}
+
 $.fn.tmpl = function(d) {
     var s = $(this[0]).html().trim();
     if (d) {
