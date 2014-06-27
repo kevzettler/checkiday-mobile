@@ -1,0 +1,70 @@
+0000000000000000000000000000000000000000 b27ffffd3e4d326b47955a739211ffdb95ef7a1c Kev zettler <kevzettler@gmail.com> 1381880221 -0700	clone: from git@github.com:kevzettler/checkiday-mobile.git
+b27ffffd3e4d326b47955a739211ffdb95ef7a1c c081d24db1901d224ea4287ec8481802f7c1d617 Kev zettler <kevzettler@gmail.com> 1382319891 -0700	commit: added a hardcache and setup for device deploys
+c081d24db1901d224ea4287ec8481802f7c1d617 8f521491b7125f51da3fc72b1a6a6b589f4d6567 Kev zettler <kevzettler@gmail.com> 1382411970 -0700	commit: bunch of new js deps
+8f521491b7125f51da3fc72b1a6a6b589f4d6567 1862269962f561c86a896bd7cbcdda7923d04f75 Kev zettler <kevzettler@gmail.com> 1382412095 -0700	commit: wip
+1862269962f561c86a896bd7cbcdda7923d04f75 b7d6bd829a1ef153791e26ce73878196951a896b Kev zettler <kevzettler@gmail.com> 1382664446 -0700	commit: omg siwpe might work now
+b7d6bd829a1ef153791e26ce73878196951a896b 3909e4ab5e23b1b52c82ac89ebf744c6733ea886 Kev zettler <kevzettler@gmail.com> 1382675008 -0700	commit: styles and behavior
+3909e4ab5e23b1b52c82ac89ebf744c6733ea886 7c5306f18f23c8d88150691809ce5153b801d7e3 Kev zettler <kevzettler@gmail.com> 1382922172 -0700	commit: added calendar view
+7c5306f18f23c8d88150691809ce5153b801d7e3 f5afc92211860cb71a97fca5e2f50ff3a773961f Kev zettler <kevzettler@gmail.com> 1382925475 -0700	commit: added git ignore removed development dir
+f5afc92211860cb71a97fca5e2f50ff3a773961f 72331f604a4fb9818d677c951cc2476475e56278 Kev zettler <kevzettler@gmail.com> 1382926117 -0700	commit: omg this almost looks like an app
+72331f604a4fb9818d677c951cc2476475e56278 664ed191e5d13c1f318785ea43f5c2f499ef0662 Kev zettler <kevzettler@gmail.com> 1382928744 -0700	commit: few tweaks remaining
+664ed191e5d13c1f318785ea43f5c2f499ef0662 46d9978c2fc173e7030018786529b4abfb91accf Kev zettler <kevzettler@gmail.com> 1383511684 -0800	commit: new trigger account
+46d9978c2fc173e7030018786529b4abfb91accf c4955b229d6c2e8ecaba3aa812c2cbd4a4e8c1fd Kev zettler <kevzettler@gmail.com> 1383511989 -0800	commit: trigger version bump
+c4955b229d6c2e8ecaba3aa812c2cbd4a4e8c1fd 384a4ba8602d69aada871440553a9081acdc269d Kev zettler <kevzettler@gmail.com> 1383515904 -0800	commit: button styles
+384a4ba8602d69aada871440553a9081acdc269d aed2bb19dca17d937d620e003144000fd96e9971 Kev zettler <kevzettler@gmail.com> 1383517922 -0800	commit: fix slide down
+aed2bb19dca17d937d620e003144000fd96e9971 ccadf5af98fc1d32a7746b84280d9bdb11899334 Kev zettler <kevzettler@gmail.com> 1383519609 -0800	commit: adding icons
+ccadf5af98fc1d32a7746b84280d9bdb11899334 19e0824a4d3bd6914bd9fef95d55f7e7f36e50a4 Kev zettler <kevzettler@gmail.com> 1383520816 -0800	pull origin master: Fast-forward
+19e0824a4d3bd6914bd9fef95d55f7e7f36e50a4 6de208841357b1d6f2d3976f64fbbfee97c56f66 Kev zettler <kevzettler@gmail.com> 1383525856 -0800	pull origin master: Fast-forward
+6de208841357b1d6f2d3976f64fbbfee97c56f66 1585abf9e0325415b2a0f255a48292617019a441 Kev zettler <kevzettler@gmail.com> 1383526000 -0800	commit: extra twitter icon
+1585abf9e0325415b2a0f255a48292617019a441 648952fec7d853d9d26e7911230cbdce3fcf52b1 Kev zettler <kevzettler@gmail.com> 1383537631 -0800	commit: share this support
+648952fec7d853d9d26e7911230cbdce3fcf52b1 c07c02e9b6a4a9b487e4feb47d3ee289b42b0e61 Kev zettler <kevzettler@gmail.com> 1383539740 -0800	commit: font sizes
+c07c02e9b6a4a9b487e4feb47d3ee289b42b0e61 a034dd2313d4afa75bd8cceec8f4c4884af85431 Kev zettler <kevzettler@gmail.com> 1383539787 -0800	pull origin master: Fast-forward
+a034dd2313d4afa75bd8cceec8f4c4884af85431 31acafdb58082e62494af11cb4cf5530fad0f037 Kev zettler <kevzettler@gmail.com> 1384129327 -0800	commit: added grunt and package files
+31acafdb58082e62494af11cb4cf5530fad0f037 31acafdb58082e62494af11cb4cf5530fad0f037 Kev zettler <kevzettler@gmail.com> 1384130506 -0800	checkout: moving from master to src_refactor
+31acafdb58082e62494af11cb4cf5530fad0f037 7011ad01f470ebffba4cd5da1411ee2dddde279b Kev zettler <kevzettler@gmail.com> 1384130590 -0800	commit: moved src/ to app/ src now smylink to build, moved 3rdparty js to js/vendor
+7011ad01f470ebffba4cd5da1411ee2dddde279b 4ceb64f34b95945a150e5b4a430cdd2de0a89303 Kev zettler <kevzettler@gmail.com> 1384136720 -0800	commit: ITS ALIVE some kind of grunt build system and some more style tweaks
+4ceb64f34b95945a150e5b4a430cdd2de0a89303 cc677a261ae3383bdfe7160c1eda96a7ccaecf8b Kev zettler <kevzettler@gmail.com> 1384137269 -0800	commit: icons
+cc677a261ae3383bdfe7160c1eda96a7ccaecf8b ee10d5e60e97dca0967539675dae1be92d4367a7 Kev zettler <kevzettler@gmail.com> 1384238135 -0800	commit: grunt tasks and bug fix on flips
+ee10d5e60e97dca0967539675dae1be92d4367a7 fcd4793c94ad4b6758a31e7dd30e9ede79dc47ff Kev zettler <kevzettler@gmail.com> 1384405798 -0800	commit: gab fixes
+fcd4793c94ad4b6758a31e7dd30e9ede79dc47ff 31acafdb58082e62494af11cb4cf5530fad0f037 Kev zettler <kevzettler@gmail.com> 1384405808 -0800	checkout: moving from src_refactor to master
+31acafdb58082e62494af11cb4cf5530fad0f037 fcd4793c94ad4b6758a31e7dd30e9ede79dc47ff Kev zettler <kevzettler@gmail.com> 1384405810 -0800	merge src_refactor: Fast-forward
+fcd4793c94ad4b6758a31e7dd30e9ede79dc47ff 2d6ed7f17473cec224ecd75183edca4ed3c7f784 Kev zettler <kevzettler@gmail.com> 1384736356 -0800	pull origin master: Fast-forward
+2d6ed7f17473cec224ecd75183edca4ed3c7f784 a9ed35cf4f6a2c290bcc8980f3767a92b5757757 Kev zettler <kevzettler@gmail.com> 1384745337 -0800	pull origin master: Fast-forward
+a9ed35cf4f6a2c290bcc8980f3767a92b5757757 d33bad66244df16f69c419e29699174cc9ca4c46 Kev zettler <kevzettler@gmail.com> 1384745770 -0800	pull origin master: Fast-forward
+d33bad66244df16f69c419e29699174cc9ca4c46 1528a0ec2f07d925083a3637277aa9ffcdea2ac2 Kev zettler <kevzettler@gmail.com> 1384746028 -0800	commit: add splash images
+1528a0ec2f07d925083a3637277aa9ffcdea2ac2 bb87800b6fef8b9df4c815686dce2a4a7a57d5af Kev zettler <kevzettler@gmail.com> 1384747107 -0800	pull origin master: Merge made by the 'recursive' strategy.
+bb87800b6fef8b9df4c815686dce2a4a7a57d5af b1e30f37fd25b9d577cd1a4c670f61c6d356cd7c Kev zettler <kevzettler@gmail.com> 1384747528 -0800	commit: coolidge config
+b1e30f37fd25b9d577cd1a4c670f61c6d356cd7c 9bcb00f8bfc506008f9f1512b2b67de15d326b15 Kev zettler <kevzettler@gmail.com> 1384748906 -0800	pull origin master: Fast-forward
+9bcb00f8bfc506008f9f1512b2b67de15d326b15 482d0aa2d85fc5700ca47a24a202706ff91a7056 Kev zettler <kevzettler@gmail.com> 1385003419 -0800	pull origin master: Fast-forward
+482d0aa2d85fc5700ca47a24a202706ff91a7056 ed976ff48857c07dd66197d368048be889dc9b6e Kev zettler <kevzettler@gmail.com> 1385061786 -0800	commit: fix some sharing stuff
+ed976ff48857c07dd66197d368048be889dc9b6e fbff910c2ac023724f09ab376c57dcb43a121567 Kev zettler <kevzettler@gmail.com> 1385090611 -0800	pull origin master: Fast-forward
+fbff910c2ac023724f09ab376c57dcb43a121567 0a34f2f045705736a8ffd71dc356c701b871d8bd Kev zettler <kevzettler@gmail.com> 1385090718 -0800	commit: simulator add to build tasks
+0a34f2f045705736a8ffd71dc356c701b871d8bd a217237f1eb855f58e59713c4360a6baef9c6926 Kev zettler <kevzettler@gmail.com> 1385096269 -0800	pull origin master: Fast-forward
+a217237f1eb855f58e59713c4360a6baef9c6926 95dbc61de70ff846bf5c504453d5e152c37a4cac Kev zettler <kevzettler@gmail.com> 1385097000 -0800	commit: updaged config with splash screens
+95dbc61de70ff846bf5c504453d5e152c37a4cac d0388818678af39d68a3f54f1b9f9cd31fe34bad Kev zettler <kevzettler@gmail.com> 1385097253 -0800	pull origin master: Merge made by the 'recursive' strategy.
+d0388818678af39d68a3f54f1b9f9cd31fe34bad c8c6ea54ed43d78c555e20c0a9451b8bbae2480d Kev zettler <kevzettler@gmail.com> 1385097767 -0800	commit: move config.json
+c8c6ea54ed43d78c555e20c0a9451b8bbae2480d 01e6d5f33141d30a811a8c61be24cb4c7b5fdfaa Kev zettler <kevzettler@gmail.com> 1385097980 -0800	commit: update grunt with copy config file
+01e6d5f33141d30a811a8c61be24cb4c7b5fdfaa 0d622a44155e617adb9dac1a3bae78d05a37f85e Kev zettler <kevzettler@gmail.com> 1385098907 -0800	commit: git ignore magic for dist
+0d622a44155e617adb9dac1a3bae78d05a37f85e 5eb535e425397fc62d2bb6871dfad2c4b3581ca0 Kev zettler <kevzettler@gmail.com> 1385098961 -0800	commit: move identity to dist
+5eb535e425397fc62d2bb6871dfad2c4b3581ca0 c7d307c0522d37d2c52e0a5affe82123d6fb80c8 Kev zettler <kevzettler@gmail.com> 1385099485 -0800	commit: update clean not to kill configs
+c7d307c0522d37d2c52e0a5affe82123d6fb80c8 6dfc435413e88c4d45b35058a47ed11bfe0002ac Kev zettler <kevzettler@gmail.com> 1386202047 -0800	commit: version bump
+6dfc435413e88c4d45b35058a47ed11bfe0002ac 608742495350ae688fc2b9fcfb849dafc4871015 Kev zettler <kevzettler@gmail.com> 1386202070 -0800	commit: module version bump
+608742495350ae688fc2b9fcfb849dafc4871015 778574b50dc5fecc17aaced697e9c66638b25ab2 Kev zettler <kevzettler@gmail.com> 1386202162 -0800	pull origin master: Merge made by the 'recursive' strategy.
+778574b50dc5fecc17aaced697e9c66638b25ab2 6c72fbddb766d9fe24a80124d39935f510dce91c Kev zettler <kevzettler@gmail.com> 1386202974 -0800	commit: WHOOPS
+6c72fbddb766d9fe24a80124d39935f510dce91c b6ae5a4b8caa77074cb3b52e0acf3134440697d4 Kev zettler <kevzettler@gmail.com> 1386210978 -0800	commit: module bump
+b6ae5a4b8caa77074cb3b52e0acf3134440697d4 2ed55fcff54960aa5a22c6ddabe6489f350de245 Kev zettler <kevzettler@gmail.com> 1386378902 -0800	commit: module version bump
+2ed55fcff54960aa5a22c6ddabe6489f350de245 854365327d290619c523b2c724cfb3cb5f345a5f Kev zettler <kevzettler@gmail.com> 1386379453 -0800	commit: version bump
+854365327d290619c523b2c724cfb3cb5f345a5f eab88172848dd925960180643574375d329bb37e Kev zettler <kevzettler@gmail.com> 1386379653 -0800	commit: oh man almost there
+eab88172848dd925960180643574375d329bb37e 34827bcafe0b6b8cfe7cfb3c0e5240d85f6dcc6b Kev zettler <kevzettler@gmail.com> 1387082632 -0800	commit: module bump
+34827bcafe0b6b8cfe7cfb3c0e5240d85f6dcc6b e40f9bb359f63503502f8ffbb59f349d2080bfa6 Kev zettler <kevzettler@gmail.com> 1387083427 -0800	commit: module bumps
+e40f9bb359f63503502f8ffbb59f349d2080bfa6 ac7e80547757a301f0b631d902d45d2dfd68bfd3 Kev zettler <kevzettler@gmail.com> 1387157321 -0800	commit: share this email message fix
+ac7e80547757a301f0b631d902d45d2dfd68bfd3 9a1c5e3003c38d6be5909c76e7d80fd8761dc34d Kev zettler <kevzettler@gmail.com> 1388873380 -0800	commit: over flow styles
+9a1c5e3003c38d6be5909c76e7d80fd8761dc34d a370fd139ed186c2e59744ab7265fbede59a4a95 Kev zettler <kevzettler@gmail.com> 1389221478 -0800	commit: config update
+a370fd139ed186c2e59744ab7265fbede59a4a95 d5138151f3245c878750708d64321569bce38d0f kevzettler <kevzettler@gmail.com> 1402341828 -0700	commit: bug fixes and updates, smarter cache compare
+d5138151f3245c878750708d64321569bce38d0f 84c6ed89b2639817d72a85febced4403ba995bc0 kevzettler <kevzettler@gmail.com> 1402812119 -0700	commit: had to abandon fixed header
+84c6ed89b2639817d72a85febced4403ba995bc0 ddea387ac2362e201d0aadcb9fdaf15cdbb26162 kevzettler <kevzettler@gmail.com> 1403905885 -0700	commit: reload updates
+ddea387ac2362e201d0aadcb9fdaf15cdbb26162 ddea387ac2362e201d0aadcb9fdaf15cdbb26162 kevzettler <kevzettler@gmail.com> 1403907283 -0700	checkout: moving from master to trigger.io
+ddea387ac2362e201d0aadcb9fdaf15cdbb26162 ed3ac9c674a7e2a5c0ed8613ed95743d3651403b kevzettler <kevzettler@gmail.com> 1403907292 -0700	commit: remove debugging
+ed3ac9c674a7e2a5c0ed8613ed95743d3651403b ddea387ac2362e201d0aadcb9fdaf15cdbb26162 kevzettler <kevzettler@gmail.com> 1403907639 -0700	checkout: moving from trigger.io to master
+ddea387ac2362e201d0aadcb9fdaf15cdbb26162 ed3ac9c674a7e2a5c0ed8613ed95743d3651403b kevzettler <kevzettler@gmail.com> 1403907641 -0700	merge trigger.io: Fast-forward
+ed3ac9c674a7e2a5c0ed8613ed95743d3651403b ed3ac9c674a7e2a5c0ed8613ed95743d3651403b kevzettler <kevzettler@gmail.com> 1403907649 -0700	checkout: moving from master to cordova

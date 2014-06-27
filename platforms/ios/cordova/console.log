@@ -1,0 +1,24 @@
+2014-06-27 15:25:31.181 CheckidayMobile[4332:90b] Multi-tasking -> Device: YES, App: YES
+2014-06-27 15:25:31.220 CheckidayMobile[4332:90b] Unlimited access to network resources
+2014-06-27 15:25:31.225 CheckidayMobile[4332:90b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-27 15:25:31.588 CheckidayMobile[4332:90b] Resetting plugins due to page load.
+2014-06-27 15:25:31.680 CheckidayMobile[4332:90b] Finished load of: file:///Users/kevzettler/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/A6D2AED9-87CB-4C9F-B4BB-6622AA75A162/CheckidayMobile.app/www/index.html
+2014-06-27 15:30:46.987 CheckidayMobile[4910:90b] Multi-tasking -> Device: YES, App: YES
+2014-06-27 15:30:46.994 CheckidayMobile[4910:90b] Unlimited access to network resources
+2014-06-27 15:30:46.996 CheckidayMobile[4910:90b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-27 15:30:47.022 CheckidayMobile[4910:90b] [CDVTimer][splashscreen] 12.917995ms
+2014-06-27 15:30:47.022 CheckidayMobile[4910:90b] [CDVTimer][TotalPluginStartup] 13.329983ms
+2014-06-27 15:30:47.062 CheckidayMobile[4910:90b] Resetting plugins due to page load.
+2014-06-27 15:30:48.701 CheckidayMobile[4910:90b] Finished load of: file:///Users/kevzettler/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/A6D2AED9-87CB-4C9F-B4BB-6622AA75A162/CheckidayMobile.app/www/index.html
