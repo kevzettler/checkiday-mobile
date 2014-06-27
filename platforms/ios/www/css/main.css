@@ -1,0 +1,285 @@
+html,body{
+  height:100%;
+  width:100%;
+}
+
+body{
+  -webkit-perspective: 1000;
+  position: absolute;
+  top:0px;
+  -webkit-transform: translate3d(0,  0,  0) rotate(0) scale(1);
+}
+
+#main-container > :not(.active) {
+  display: none;
+}
+
+#main-container{
+  height:100%;
+  width:100%;
+  position:relative;
+  top:0px;
+}
+
+#pager{
+  height:100%;
+  width:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+
+#pager .secondary{
+  background-color:#FFF;
+}
+
+.header-row{
+  width:100%;
+}
+
+.header-row cite{
+  text-decoration:none;
+  font-style: normal;
+}
+
+html > body .switch{
+  width:35px;
+  border-color:#222;
+  border-radius: 5px;
+  background:transparent;
+  margin:0;
+  padding:3px 5px !important;
+  text-align: center;
+  border: 1px solid #222;
+  padding: 5px;
+  box-shadow: 1px 1px 1px #222;
+}
+
+.app-page{
+  position:absolute;
+  width: 100%;
+  top:0px;
+}
+
+.page{
+  width:100%;
+  -webkit-backface-visibility:hidden;
+  position: absolute;
+  padding-bottom:50px;
+}
+
+#footer{
+  background:#CCC;
+  width: 100%;
+  height: 2em;
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  text-align:center;
+}
+
+html > body .holiday_actions .stButton{
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  height:30px !important;
+  width:30px !important;
+}
+
+html > body .holiday_actions .stLarge{
+  background-image: none !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  height:30px !important;
+  width:30px !important;
+}
+
+.st_facebook_large, .st_twitter_large, .st_email_large{
+  position: relative;
+}
+
+.st_facebook_large i.fa, .st_twitter_large i.fa, .st_email_large i.fa{
+  font-size: 30px;
+  position: absolute;
+}
+
+.learn_more_container{
+  position: relative;
+  margin-right: 40px;
+}
+
+.holiday_actions .fa-question{
+  position: absolute;
+  top:6px;
+  right: -17px;
+}
+
+.holiday_actions .fa-external-link{
+  font-size: 30px;
+  position: absolute;
+  top: 2px;
+  right: -41px;
+  margin-right: 5px;
+}
+
+.header-row{
+  min-height: 2.5em;
+  background-color: red;
+  background: #ff9595; /* Old browsers */
+  background: -moz-linear-gradient(top, #ff9595 0%, #ff3030 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9595), color-stop(100%,#ff3030)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ff9595 0%,#ff3030 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ff9595 0%,#ff3030 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ff9595 0%,#ff3030 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #ff9595 0%,#ff3030 100%); /* W3C */
+}
+
+/* fixed header not working on device wtf */
+/*.page .header-row{
+  position:fixed;
+  z-index:9999;
+  top:0;
+  left:0;
+}*/
+
+.day-holiday-list .button{
+  padding:20px 0 20px 10px;
+}
+
+.button{
+  width:100%;
+  text-align: left;
+}
+
+
+
+.holiday_button{
+  position: relative;
+}
+
+.holiday_button i{
+  position:absolute;
+  right:10px;
+  top: 20px;
+  font-size: 18px;
+}
+
+.holiday_button span{
+  margin-right: 20px;
+}
+
+.holiday_actions{
+  list-style-type: none;
+  display: none;
+  background: #efefef;
+  width: 100%;
+  padding-top: 6px !important;
+  height: 45px
+}
+
+.holiday_actions a{
+  margin-left:10px;
+  color:#222;
+}
+
+.holiday_actions cite{
+  color:#9C9A9A;
+}
+
+.holiday_actions li{
+  margin-right: 10px !important;
+}
+
+.holiday_actions .fa{
+  color: #222;
+}
+
+h1, h2{
+  padding-left:10px;
+}
+
+a.pull-left{
+  float:left;
+}
+
+a.prev{
+  float:left;
+}
+
+a.next{
+  float:right;
+  margin-right:10px;
+}
+
+h1{
+  text-align: center;
+  font-size:25px;
+}
+
+.app-page h1 a{
+  color: #222;
+}
+
+h2{
+  font-size:18px;
+}
+
+ul, li{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+#calendar-holder{
+  height: 100%;
+}
+
+#cal-view{
+  height:100%;
+}
+
+.flip {
+    -webkit-animation-duration: .65s;
+    -webkit-backface-visibility:hidden;
+    -webkit-transform:translateX(0); /* Needed to work around an iOS 3.1 bug that causes listview thumbs to disappear when -webkit-visibility:hidden is used. */
+}
+
+.flip.out {
+    -webkit-transform: rotateY(-180deg) scale(.8);
+    -webkit-animation-name: flipouttoleft;
+}
+
+.flip.in {
+    -webkit-transform: rotateY(0) scale(1);
+    -webkit-animation-name: flipinfromleft;
+}
+
+/* Shake it all about */
+.flip.out.reverse {
+    -webkit-transform: rotateY(180deg) scale(.8);
+    -webkit-animation-name: flipouttoright;
+}
+
+.flip.in.reverse {
+    -webkit-transform: rotateY(0) scale(1);
+    -webkit-animation-name: flipinfromright;
+}
+
+@-webkit-keyframes flipinfromright {
+    from { -webkit-transform: rotateY(-180deg) scale(.8); }
+    to { -webkit-transform: rotateY(0) scale(1); }
+}
+
+@-webkit-keyframes flipinfromleft {
+    from { -webkit-transform: rotateY(180deg) scale(.8); }
+    to { -webkit-transform: rotateY(0) scale(1); }
+}
+
+@-webkit-keyframes flipouttoleft {
+    from { -webkit-transform: rotateY(0) scale(1); }
+    to { -webkit-transform: rotateY(-180deg) scale(.8); }
+}
+
+@-webkit-keyframes flipouttoright {
+    from { -webkit-transform: rotateY(0) scale(1); }
+    to { -webkit-transform: rotateY(180deg) scale(.8); }
+}
+
