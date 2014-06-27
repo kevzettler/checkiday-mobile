@@ -1,26 +1,26 @@
 {
-    "web": {
-        "profiles": {
-            "DEFAULT": {
-                "heroku_app_name": "whispering-inlet-3269", 
-                "heroku_api_key": "b21d60b5dd01034a0ac2cab399c45aa7"
-            }
-        }
-    }, 
-    "ios": {
-        "device": "device", 
-        "simulatorvariant": "default", 
-        "simulatorsdk": "6.1", 
-        "simulatorfamily": "iphone", 
-        "profiles": {
-            "DEFAULT": {
-                "provisioning_profile": "/Users/kevzettler/Downloads/adhoc_checkiday_profile.mobileprovision", 
-                "developer_certificate_path": "/Users/kevzettler/Downloads/ios_distribution.cer", 
-                "developer_certificate": "Kev Zettler"
-            }
-        }
-    }, 
-    "general": {
-        "reload": {}
-    }
+	"web": {
+		"profiles": {
+			"DEFAULT": {
+				"heroku_app_name": "whispering-inlet-3269",
+				"heroku_api_key": "b21d60b5dd01034a0ac2cab399c45aa7"
+			}
+		}
+	},
+	"ios": {
+		"device": "device",
+		"simulatorvariant": "default",
+		"simulatorsdk": "6.1",
+		"simulatorfamily": "iphone",
+		"profiles": {
+			"DEFAULT": {
+				"provisioning_profile": "/Users/kevzettler/Downloads/checkiday.mobileprovision",
+				"developer_certificate_path": "/Users/kevzettler/Downloads/ios_distribution.cer",
+				"developer_certificate": "Kev Zettler"
+			}
+		}
+	},
+	"general": {
+		"reload": {}
+	}
 }

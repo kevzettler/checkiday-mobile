@@ -1,82 +1,82 @@
 {
-	"config_version": "4",
-	"name": "checkiday-mobile",
-	"author": "kevzettler@gmail.com",
-	"version": "1.0",
-	"platform_version": "v2.1.6",
-	"description": "A list of today's holidays, most of which you won't find on a calendar!",
-	"core": {
-		"general": {
-			"logging": {
-				"level": "DEBUG"
-			},
-			"reload": true,
-			"trusted_urls": [
-				"www.checkiday.com"
-			]
-		},
-		"android": {
-			"minimum_version": "5"
-		},
-		"ios": {
-			"minimum_version": "4.3",
-			"device_family": "any",
-			"package_name": "com.checkiday"
-		}
-	},
-	"modules": {
-		"request": {
-			"version": "2.4",
-			"config": {
-				"permissions": [
-					"http://www.checkiday.com/api/*"
-				]
-			}
-		},
-		"prefs": {
-			"version": "2.0"
-		},
-		"icons": {
-			"version": "2.1",
-			"config": {
-				"ios": {
-					"57": "img/icons/ios/57.png",
-					"72": "img/icons/ios/72.png",
-					"76": "img/icons/ios/76.png",
-					"114": "img/icons/ios/114.png",
-					"120": "img/icons/ios/120.png",
-					"144": "img/icons/ios/144.png",
-					"152": "img/icons/ios/152.png",
-					"512": "img/icons/ios/512.png",
-					"prerendered": true
-				}
-			}
-		},
-		"launchimage": {
-			"version": "2.2",
-			"config": {
-				"ios": {
-					"1536x2048": "img/splash/1536x2048.png",
-					"320x480": "img/splash/320x480.png",
-					"640x1136": "img/splash/640x1136.png",
-					"2048x1536": "img/splash/2048x1536.png",
-					"1536x2008": "img/splash/1536x2008.png",
-					"1024x768": "img/splash/1024x768.png",
-					"2048x1496": "img/splash/2048x1496.png",
-					"1024x748": "img/splash/1024x748.png",
-					"640x960": "img/splash/640x960.png",
-					"768x1004": "img/splash/768x1004.png",
-					"768x1024": "img/splash/768x1024.png"
-				},
-				"background-color": "#FFFFFF"
-			}
-		},
-		"admob": {
-			"version": "0.4.5",
-			"config": {
-				"Publisher ID": "ca-app-pub-3618464762947859/8791781218"
-			}
-		}
-	},
-	"homepage": "www.checkiday.com"
+    "author": "kevzettler@gmail.com", 
+    "config_version": "4", 
+    "core": {
+        "android": {
+            "minimum_version": "5"
+        }, 
+        "general": {
+            "logging": {
+                "level": "DEBUG"
+            }, 
+            "reload": true, 
+            "trusted_urls": [
+                "www.checkiday.com"
+            ]
+        }, 
+        "ios": {
+            "device_family": "any", 
+            "minimum_version": "4.3", 
+            "package_name": "com.checkiday"
+        }
+    }, 
+    "description": "A list of today's holidays, most of which you won't find on a calendar!", 
+    "homepage": "www.checkiday.com", 
+    "modules": {
+        "admob": {
+            "config": {
+                "Publisher ID": "ca-app-pub-3618464762947859/8791781218"
+            }, 
+            "version": "0.4.5"
+        }, 
+        "icons": {
+            "config": {
+                "ios": {
+                    "114": "img/icons/ios/114.png", 
+                    "120": "img/icons/ios/120.png", 
+                    "144": "img/icons/ios/144.png", 
+                    "152": "img/icons/ios/152.png", 
+                    "512": "img/icons/ios/512.png", 
+                    "57": "img/icons/ios/57.png", 
+                    "72": "img/icons/ios/72.png", 
+                    "76": "img/icons/ios/76.png", 
+                    "prerendered": true
+                }
+            }, 
+            "version": "2.1"
+        }, 
+        "launchimage": {
+            "config": {
+                "background-color": "#FFFFFF", 
+                "ios": {
+                    "1024x748": "img/splash/1024x748.png", 
+                    "1024x768": "img/splash/1024x768.png", 
+                    "1536x2008": "img/splash/1536x2008.png", 
+                    "1536x2048": "img/splash/1536x2048.png", 
+                    "2048x1496": "img/splash/2048x1496.png", 
+                    "2048x1536": "img/splash/2048x1536.png", 
+                    "320x480": "img/splash/320x480.png", 
+                    "640x1136": "img/splash/640x1136.png", 
+                    "640x960": "img/splash/640x960.png", 
+                    "768x1004": "img/splash/768x1004.png", 
+                    "768x1024": "img/splash/768x1024.png"
+                }
+            }, 
+            "version": "2.2"
+        }, 
+        "prefs": {
+            "version": "2.0"
+        }, 
+        "request": {
+            "config": {
+                "permissions": [
+                    "http://www.checkiday.com/api/*"
+                ]
+            }, 
+            "version": "2.4"
+        }
+    }, 
+    "name": "checkiday-mobile", 
+    "platform_version": "v2.1.6", 
+    "version": "1.0.1"
 }
