@@ -10,6 +10,7 @@
 //   }
 // }
 
+console.log("lets do this!!!");
 var httpReq = new plugin.HttpRequest();
 
 //zepto templates
@@ -264,6 +265,7 @@ function getHolidays(date){
     httpReq.get("http://www.checkiday.com/api/3/?d="+state.date, $.proxy(updateCheckHandler, this), requestGetErrorHandler);
   }else{
     //forge.prefs.get(date, $.proxy(prefsGetHandler, state), prefsErrorHandler);
+    prefsGetHandler(null);
   }
 }
 

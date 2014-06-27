@@ -1,0 +1,53 @@
+2014-06-27 16:00:56.598 Checkiday[6645:90b] Multi-tasking -> Device: YES, App: YES
+2014-06-27 16:00:56.616 Checkiday[6645:90b] Unlimited access to network resources
+2014-06-27 16:00:56.621 Checkiday[6645:90b] Fix applied for database locations?: YES
+2014-06-27 16:00:56.626 Checkiday[6645:90b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-27 16:00:56.661 Checkiday[6645:90b] [CDVTimer][splashscreen] 10.043025ms
+2014-06-27 16:00:56.662 Checkiday[6645:90b] [CDVTimer][TotalPluginStartup] 10.941982ms
+2014-06-27 16:00:56.866 Checkiday[6645:90b] Resetting plugins due to page load.
+2014-06-27 16:00:58.299 Checkiday[6645:90b] Finished load of: file:///Users/kevzettler/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/725015E6-BABD-48DE-ABE5-C1A92EC705C5/Checkiday.app/www/index.html
+2014-06-27 16:03:11.138 Checkiday[6941:90b] Multi-tasking -> Device: YES, App: YES
+2014-06-27 16:03:11.145 Checkiday[6941:90b] Unlimited access to network resources
+2014-06-27 16:03:11.148 Checkiday[6941:90b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-27 16:03:11.168 Checkiday[6941:90b] [CDVTimer][splashscreen] 7.333040ms
+2014-06-27 16:03:11.168 Checkiday[6941:90b] [CDVTimer][TotalPluginStartup] 7.759988ms
+2014-06-27 16:03:11.215 Checkiday[6941:90b] Resetting plugins due to page load.
+2014-06-27 16:03:11.509 Checkiday[6941:90b] Finished load of: file:///Users/kevzettler/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/725015E6-BABD-48DE-ABE5-C1A92EC705C5/Checkiday.app/www/index.html
+2014-06-27 16:04:55.012 Checkiday[7237:90b] Multi-tasking -> Device: YES, App: YES
+2014-06-27 16:04:55.023 Checkiday[7237:90b] Unlimited access to network resources
+2014-06-27 16:04:55.029 Checkiday[7237:90b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-27 16:04:55.063 Checkiday[7237:90b] [CDVTimer][splashscreen] 11.592984ms
+2014-06-27 16:04:55.064 Checkiday[7237:90b] [CDVTimer][TotalPluginStartup] 12.431979ms
+2014-06-27 16:04:55.257 Checkiday[7237:90b] Resetting plugins due to page load.
+2014-06-27 16:04:55.615 Checkiday[7237:90b] Finished load of: file:///Users/kevzettler/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/725015E6-BABD-48DE-ABE5-C1A92EC705C5/Checkiday.app/www/index.html
+2014-06-27 16:08:16.956 Checkiday[7590:90b] Multi-tasking -> Device: YES, App: YES
+2014-06-27 16:08:16.963 Checkiday[7590:90b] Unlimited access to network resources
+2014-06-27 16:08:16.966 Checkiday[7590:90b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-27 16:08:16.986 Checkiday[7590:90b] [CDVTimer][splashscreen] 7.582009ms
+2014-06-27 16:08:16.987 Checkiday[7590:90b] [CDVTimer][TotalPluginStartup] 8.103967ms
+2014-06-27 16:08:17.028 Checkiday[7590:90b] Resetting plugins due to page load.
+2014-06-27 16:08:18.428 Checkiday[7590:90b] Finished load of: file:///Users/kevzettler/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/725015E6-BABD-48DE-ABE5-C1A92EC705C5/Checkiday.app/www/index.html
