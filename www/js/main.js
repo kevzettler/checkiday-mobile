@@ -1,14 +1,16 @@
-if(typeof forge != 'undefined'){
-  forge.logging.info("Setting console.log to forge debug");
-  console.log = function(){
-    var args_array = Array.prototype.slice.call(arguments);
-    forge.logging.debug("Console.log: " + args_array.toString());
-  };
+// if(typeof forge != 'undefined'){
+//   forge.logging.info("Setting console.log to forge debug");
+//   console.log = function(){
+//     var args_array = Array.prototype.slice.call(arguments);
+//     forge.logging.debug("Console.log: " + args_array.toString());
+//   };
 
-  if(typeof forge.admob != "undefined"){
-    forge.admob.footerBanner();
-  }
-}
+//   if(typeof forge.admob != "undefined"){
+//     forge.admob.footerBanner();
+//   }
+// }
+
+var httpReq = new plugin.HttpRequest();
 
 //zepto templates
 if(typeof $ === 'undefined'){
@@ -221,7 +223,7 @@ function prefsGetHandler(result){
   if(result !== null){
     renderHolidays(result.holidays);
   }else{
-    forge.request.get("http://www.checkiday.com/api/3/?d="+this.date, $.proxy(requestGetHandler, this), requestGetErrorHandler);
+    httpReq.get("http://www.checkiday.com/api/3/?d="+this.date, $.proxy(requestGetHandler, this), requestGetErrorHandler);
   }
 }
 
@@ -248,7 +250,7 @@ function updateCheckHandler(result){
 
 function requestGetHandler(result){
   renderHolidays(result.holidays);
-  forge.prefs.set(this.date, result.holidays, prefsSetHandler, prefsSetErrorHandler);
+  //forge.prefs.set(this.date, result.holidays, prefsSetHandler, prefsSetErrorHandler);
 }
 
 function requestGetErrorHandler(error){
@@ -259,9 +261,9 @@ function getHolidays(date){
   var state = {date: formatDate(date).ugly};
   if(typeof hard_cache[state.date] != 'undefined'){
     renderHolidays(hard_cache[state.date].holidays);
-    forge.request.get("http://www.checkiday.com/api/3/?d="+state.date, $.proxy(updateCheckHandler, this), requestGetErrorHandler);
+    httpReq.get("http://www.checkiday.com/api/3/?d="+state.date, $.proxy(updateCheckHandler, this), requestGetErrorHandler);
   }else{
-    forge.prefs.get(date, $.proxy(prefsGetHandler, state), prefsErrorHandler);
+    //forge.prefs.get(date, $.proxy(prefsGetHandler, state), prefsErrorHandler);
   }
 }
 
@@ -282,7 +284,7 @@ function updateMonthYear() {
 
 function generateSwipeEvent(direction){
   return function(e){
-    forge.admob.refresh();
+    //forge.admob.refresh();
     if(checkiday.view === 'list'){
       checkiday.date = AddDays(checkiday.date, checkiday.directions[direction]);
       slideTransition($('#pager'), $('.page'), renderPage(checkiday.date), checkiday.directions[direction]);
@@ -310,7 +312,7 @@ function ensureCalendar(){
       checkiday.date = date;
       renderPage(date);
       flipTransition('#cal-view', '#list-view', true, checkiday.noop, function(){
-        forge.admob.refresh();
+        //forge.admob.refresh();
         checkiday.view = 'list';
       });
     },
@@ -370,7 +372,7 @@ $(document).ready(function() {
 
   $doc.on('click', "#list-view h1 .switch", function(e){
     flipTransition("#list-view", "#cal-view", true, checkiday.noop, function(){
-      forge.admob.refresh();
+      //forge.admob.refresh();
       checkiday.view = "cal";
       ensureCalendar();
     });
@@ -378,7 +380,7 @@ $(document).ready(function() {
 
   $doc.on('click', "#cal-view h1 .switch", function(e){
     flipTransition("#cal-view", "#list-view", true, checkiday.noop, function(){
-      forge.admob.refresh();
+      //forge.admob.refresh();
       checkiday.view = "list";
     });
   });

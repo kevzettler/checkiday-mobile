@@ -25,6 +25,10 @@
                         {
                             "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"HttpRequest\"><param name=\"ios-package\" value=\"HttpRequest\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -36,6 +40,9 @@
             "PACKAGE_NAME": "com.checkiday.www"
         },
         "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.checkiday.www"
+        },
+        "plugin.http.request": {
             "PACKAGE_NAME": "com.checkiday.www"
         }
     },
